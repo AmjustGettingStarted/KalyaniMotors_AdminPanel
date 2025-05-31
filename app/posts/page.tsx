@@ -1,7 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield, Sidebar } from "lucide-react";
+import { Filter, Search, Shield, Sidebar } from "lucide-react";
 import React from "react";
 import { posts_data } from "@/data/posts";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
 
 const Posts = () => {
   // Function to determine the css of the posts data
@@ -57,6 +59,25 @@ const Posts = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+      </div>
+
+      {/* Filter component */}
+      <div>
+        <div className="flex flex-col">
+          <div className="flex w-full">
+            <div className="w-1/2 flex">
+              <Search />
+              <Input placeholder="Searc by username, content, or post ID..." />
+            </div>
+            <div className="w-1/2 flex"><p><Filter/></p>
+            <p></p></div>
+          </div>
+          <div>
+            <p>
+              <Checkbox className="mr-2" /> Select all
+            </p>
+          </div>
         </div>
       </div>
     </div>

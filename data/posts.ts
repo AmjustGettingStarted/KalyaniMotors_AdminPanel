@@ -53,3 +53,25 @@ export const posts_data = [
 ];
 
 export const posts_blogs = [];
+
+export type Status = "All Status" | "Pending" | "Approved" | "Rejected";
+export const status: Status[] = [
+  "All Status",
+  "Pending",
+  "Approved",
+  "Rejected",
+];
+
+type FilterData =
+  | "Newest First"
+  | "Oldest First"
+  | "User Name"
+  | "Status"
+  | "Most Comments";
+export const filterData: FilterData[] = [
+  "Newest First",
+  "Oldest First",
+  "User Name",
+  "Status",
+  "Most Comments",
+];

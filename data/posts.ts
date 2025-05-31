@@ -75,3 +75,32 @@ export const filterData: FilterData[] = [
   "Status",
   "Most Comments",
 ];
+
+export const allPostsData = [
+  {
+    avatar: "",
+    user: "user_4",
+    time: "2 hours",
+    status: "rejected",
+    postTitle:
+      "Sample post content 4. This is a test post with detailed information for the posts tab.",
+    url: "https://wallpaperaccess.com/full/974541.jpg",
+    commentNo: 11,
+    pending: 3,
+    approved: 13,
+    rejected: 0,
+  },
+  {
+    avatar: "",
+    user: "user_5",
+    time: "3 hours",
+    status: "approved",
+    postTitle:
+      "Sample post content 5. This is a test post with detailed information for the posts tab.",
+    url: "https://images.pexels.com/photos/32327754/pexels-photo-32327754/free-photo-of-modern-urban-skyline-with-high-rise-buildings.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    commentNo: 6,
+    pending: 2,
+    approved: 13,
+    rejected: 0,
+  },
+];

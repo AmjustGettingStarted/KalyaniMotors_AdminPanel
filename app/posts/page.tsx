@@ -1,9 +1,17 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Filter, Search, Shield, Sidebar } from "lucide-react";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { ArrowDownUpIcon, Filter, Search, Shield, Sidebar } from "lucide-react";
 import React from "react";
-import { posts_data } from "@/data/posts";
+import { filterData, posts_data, status } from "@/data/posts";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import SelectMenu from "@/components/sub/select-menu";
 
 const Posts = () => {
   // Function to determine the css of the posts data
@@ -41,12 +49,12 @@ const Posts = () => {
         </div>
       </div>
       {/* Posts Details Cards */}
-      <div className="p-6">
+      <div className="py-6">
         <div className="grid grid-cols-3 gap-8">
           {posts_data.map((post, i) => (
             <Card key={i} className={getCss(post.heading)}>
               <CardContent>
-                <div className="p-6 flex-col">
+                <div className=" flex-col">
                   <div className="w-full flex justify-between items-center">
                     <p>{post.heading}</p>
                     <p>
@@ -63,21 +71,52 @@ const Posts = () => {
       </div>
 
       {/* Filter component */}
-      <div>
-        <div className="flex flex-col">
+      <div className="p-4 border border-gray-300 rounded-md">
+        <div className="flex flex-col gap-4">
           <div className="flex w-full">
             <div className="w-1/2 flex">
               <Search />
               <Input placeholder="Searc by username, content, or post ID..." />
             </div>
-            <div className="w-1/2 flex"><p><Filter/></p>
-            <p></p></div>
+            <div className="w-1/2 flex">
+              <p className="flex items-center w-1/2">
+                <Filter />
+                <SelectMenu data={status} />
+              </p>
+              <p className="flex items-center w-1/2">
+                <ArrowDownUpIcon />
+                <SelectMenu data={filterData} />
+              </p>
+            </div>
           </div>
           <div>
-            <p>
-              <Checkbox className="mr-2" /> Select all
+            <p className="">
+              <Checkbox className="mr-2 border-black items-center" /> Select all
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* All Posts */}
+      <div className="py-4">
+        <div className="gird grid-cols-2 gap-4">
+          <Card>
+            {/* Top Content */}
+            <CardHeader>
+              <CardTitle>
+                <div>
+                  <Checkbox className="border-black mr-2" />
+                </div>
+              </CardTitle>
+              <CardAction>Card Action</CardAction>
+            </CardHeader>
+            <CardContent>
+              <p>Card Content</p>
+            </CardContent>
+            <CardFooter>
+              <p>Card Footer</p>
+            </CardFooter>
+          </Card>
         </div>
       </div>
     </div>

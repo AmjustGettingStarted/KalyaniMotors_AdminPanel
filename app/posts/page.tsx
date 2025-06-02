@@ -73,13 +73,13 @@ const Posts = () => {
 
       {/* Posts Details Cards */}
       <div className="py-6">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {posts_data.map((post, i) => (
             <Card key={i} className={getCss(post.heading)}>
               <CardContent>
                 <div className="flex-col">
                   <div className="w-full flex justify-between items-center">
-                    <p className="font-medium text-sm md:text-base tracking-tight">
+                    <p className="font-medium text-xs md:text-base tracking-tight line-clamp-1">
                       {post.heading}
                     </p>
                     <p>
@@ -136,7 +136,7 @@ const Posts = () => {
               {/* Top Content */}
               <CardHeader>
                 <CardTitle>
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-2 md:space-x-4">
                     <Checkbox className="border-black " />
                     <Avatar>
                       <AvatarImage src={post.avatar} />
@@ -145,8 +145,8 @@ const Posts = () => {
                       </AvatarFallback>
                     </Avatar>
                     <div className="flex flex-col leading-loose">
-                      <p className="text-lg">@{post.user}</p>
-                      <p className="text-sm text-slate-500 font-normal">
+                      <p className="text-sm md:text-lg">@{post.user}</p>
+                      <p className="text-xs md:text-sm text-slate-500 font-normal line-clamp-1 ">
                         about {post.time} ago
                       </p>
                     </div>
@@ -242,13 +242,13 @@ const Posts = () => {
               <CardFooter className="flex w-full gap-2">
                 <Button
                   variant="link"
-                  className="flex h-10 items-center w-1/2 bg-green-600 hover:bg-green-700 hover:no-underline text-white rounded-sm text-base"
+                  className="flex h-10 items-center w-1/2 bg-green-600 hover:bg-green-700 hover:no-underline text-white rounded-sm  cursor-pointer text-base"
                 >
                   <CheckCircle /> Approve
                 </Button>
                 <Button
                   variant="destructive"
-                  className="flex h-10 items-center w-1/2 rounded-sm text-base hover:bg-red-700"
+                  className="flex h-10 items-center w-1/2 rounded-sm  cursor-pointer text-base hover:bg-red-700"
                 >
                   <CircleX />
                   Reject

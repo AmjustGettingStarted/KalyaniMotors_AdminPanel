@@ -91,7 +91,7 @@ export const allPostsData = [
     rejected: 0,
   },
   {
-    avatar: "",
+    avatar: "https://images.pexels.com/photos/1013000/pexels-photo-1013000.jpeg?auto=compress&cs=tinysrgb&w=100",
     user: "user_5",
     time: "3 hours",
     status: "approved",
@@ -101,6 +101,20 @@ export const allPostsData = [
     commentNo: 6,
     pending: 2,
     approved: 13,
+    rejected: 0,
+  },
+  {
+    avatar:
+      "https://images.pexels.com/photos/1004000/pexels-photo-1004000.jpeg?auto=compress&cs=tinysrgb&w=100",
+    user: "user_8",
+    time: "3 hours",
+    status: "pending",
+    postTitle:
+      "Sample post content 8. This is a test post with detailed information for the posts tab.",
+    url: "https://images.pexels.com/photos/1216000/pexels-photo-1216000.jpeg?auto=compress&cs=tinysrgb&w=400",
+    commentNo: 19,
+    pending: 4,
+    approved: 0,
     rejected: 0,
   },
 ];

@@ -73,13 +73,15 @@ const Posts = () => {
 
       {/* Posts Details Cards */}
       <div className="py-6">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
           {posts_data.map((post, i) => (
             <Card key={i} className={getCss(post.heading)}>
               <CardContent>
                 <div className="flex-col">
                   <div className="w-full flex justify-between items-center">
-                    <p className="font-semibold">{post.heading}</p>
+                    <p className="font-medium text-sm md:text-base tracking-tight">
+                      {post.heading}
+                    </p>
                     <p>
                       <post.icon size={18} />
                     </p>
@@ -130,7 +132,7 @@ const Posts = () => {
       <div className="py-4">
         <div className="grid lg:grid-cols-2 gap-4">
           {repeatedPosts.map((post, i) => (
-            <Card key={i}>
+            <Card key={i} className="flex-col gap-2">
               {/* Top Content */}
               <CardHeader>
                 <CardTitle>
@@ -142,26 +144,43 @@ const Posts = () => {
                         <User />
                       </AvatarFallback>
                     </Avatar>
-                    <div className="flex flex-col">
-                      <p>@{post.user}</p>
-                      <p>about {post.time} ago</p>
+                    <div className="flex flex-col leading-loose">
+                      <p className="text-lg">@{post.user}</p>
+                      <p className="text-sm text-slate-500 font-normal">
+                        about {post.time} ago
+                      </p>
                     </div>
                   </div>
                 </CardTitle>
                 <CardAction>
-                  <div className="flex">
-                    <p className="flex items-center">
-                      <Clock /> {post.status}
+                  <div className="flex space-x-4">
+                    <p
+                      className={`flex items-center rounded-full  px-2 text-sm capitalize font-medium ${
+                        post.status === "approved"
+                          ? "bg-green-100 text-green-800"
+                          : post.status === "rejected"
+                          ? "bg-red-100 text-red-800"
+                          : "bg-amber-100 text-amber-800"
+                      }`}
+                    >
+                      {post.status === "pending" ? (
+                        <Clock size={15} className="mr-2" />
+                      ) : post.status === "approved" ? (
+                        <CheckCircle size={15} className="mr-2" />
+                      ) : (
+                        <CircleX size={15} className="mr-2" />
+                      )}
+                      {post.status}
                     </p>
                     <p>
-                      <ExternalLinkIcon />
+                      <ExternalLinkIcon size={18} />
                     </p>
                   </div>
                 </CardAction>
               </CardHeader>
               <CardContent>
-                <div className="flex-col">
-                  <p>{post.postTitle}</p>
+                <div className="flex-col space-y-4">
+                  <p className="md:text-lg leading-relaxed line-clamp-3 text-slate-700 text-sm">{post.postTitle}</p>
                   <div>
                     <Image
                       src={post.url}

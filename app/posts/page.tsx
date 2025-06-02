@@ -49,6 +49,11 @@ const Posts = () => {
     }
   }
 
+  // Repeats allPostsData 5 times and flattens the nested array into a single array.
+  const repeatedPosts = Array(5).fill(allPostsData).flat();
+  // const repeatedPosts = [].concat(...Array(5).fill(allPostsData));
+  // const repeatedPosts = Array.from({ length: 5 }, () => allPostsData).flat();
+
   return (
     <div className="px-6 pt-8">
       {/* Top Header */}
@@ -114,97 +119,94 @@ const Posts = () => {
 
       {/* All Posts */}
       <div className="py-4">
-        <div className="grid grid-cols-2 gap-4">
-          {allPostsData.map((post,i)=>(
-
+        <div className="grid lg:grid-cols-2 gap-4">
+          {repeatedPosts.map((post, i) => (
             <Card key={i}>
-            {/* Top Content */}
-            <CardHeader>
-              <CardTitle>
-                <div className="flex items-center space-x-4">
-                  <Checkbox className="border-black " />
-                  <Avatar>
-                    <AvatarImage src={post.avatar} />
-                    <AvatarFallback>
-                      <User />
-                    </AvatarFallback>
-                  </Avatar>
-                  <div className="flex flex-col">
-                    <p>@{post.user}</p>
-                    <p>about {post.time} ago</p>
+              {/* Top Content */}
+              <CardHeader>
+                <CardTitle>
+                  <div className="flex items-center space-x-4">
+                    <Checkbox className="border-black " />
+                    <Avatar>
+                      <AvatarImage src={post.avatar} />
+                      <AvatarFallback>
+                        <User />
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="flex flex-col">
+                      <p>@{post.user}</p>
+                      <p>about {post.time} ago</p>
+                    </div>
+                  </div>
+                </CardTitle>
+                <CardAction>
+                  <div className="flex">
+                    <p className="flex items-center">
+                      <Clock /> {post.status}
+                    </p>
+                    <p>
+                      <ExternalLinkIcon />
+                    </p>
+                  </div>
+                </CardAction>
+              </CardHeader>
+              <CardContent>
+                <div className="flex-col">
+                  <p>{post.postTitle}</p>
+                  <div>
+                    <Image
+                      src={post.url}
+                      alt="Image"
+                      width={1000}
+                      height={1000}
+                      className="rounded-md object-cover h-[160px] w-full"
+                    />
+                  </div>
+                  {/* Comments */}
+                  <div className="py-4 ">
+                    <Card className="bg-slate-50">
+                      <CardHeader>
+                        <CardTitle className="flex items-center">
+                          <MessageSquare /> {post.commentNo} Comments
+                        </CardTitle>
+                        <CardAction>
+                          <Button variant="outline">View All</Button>
+                        </CardAction>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="flex items-center justify-evenly">
+                          <p className="flex-col flex items-center">
+                            <span>{post.pending}</span>
+                            <span>Pending</span>
+                          </p>
+                          <p className="flex-col flex items-center">
+                            <span>{post.approved}</span>
+                            <span>Approved</span>
+                          </p>
+                          <p className="flex-col flex items-center">
+                            <span>{post.rejected}</span>
+                            <span>Rejected</span>
+                          </p>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
                 </div>
-              </CardTitle>
-              <CardAction>
-                <div className="flex">
-                  <p className="flex items-center">
-                    <Clock /> {post.status}
-                  </p>
-                  <p>
-                    <ExternalLinkIcon />
-                  </p>
-                </div>
-              </CardAction>
-            </CardHeader>
-            <CardContent>
-              <div className="flex-col">
-                <p>
-                  {post.postTitle}
-                </p>
-                <div>
-                  <Image
-                    src={post.url}
-                    alt="Image"
-                    width={1000}
-                    height={1000}
-                    className="rounded-md object-cover h-[160px] w-full"
-                  />
-                </div>
-                {/* Comments */}
-                <div className="py-4 ">
-                  <Card className="bg-slate-50">
-                    <CardHeader>
-                      <CardTitle className="flex items-center">
-                        <MessageSquare /> {post.commentNo} Comments
-                      </CardTitle>
-                      <CardAction>
-                        <Button variant="outline">View All</Button>
-                      </CardAction>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex items-center justify-evenly">
-                        <p className="flex-col flex items-center">
-                          <span>{post.pending}</span>
-                          <span>Pending</span>
-                        </p>
-                        <p className="flex-col flex items-center">
-                          <span>{post.approved}</span>
-                          <span>Approved</span>
-                        </p>
-                        <p className="flex-col flex items-center">
-                          <span>{post.rejected}</span>
-                          <span>Rejected</span>
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            </CardContent>
-            <CardFooter className="flex w-full gap-2">
-              <Button
-                variant="link"
-                className="w-1/2 flex bg-green-500 text-white"
+              </CardContent>
+              <CardFooter className="flex w-full gap-2">
+                <Button
+                  variant="link"
+                  className="w-1/2 flex bg-green-500 text-white"
                 >
-                <CheckCircle /> Approve
-              </Button>
-              <Button variant="destructive" className="w-1/2">
-                <CircleX />
-                Reject
-              </Button>
-            </CardFooter>
-          </Card>
-              ))}
+                  <CheckCircle /> Approve
+                </Button>
+                <Button variant="destructive" className="w-1/2">
+                  <CircleX />
+                  Reject
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
         </div>
       </div>
     </div>

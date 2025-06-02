@@ -55,13 +55,14 @@ const Posts = () => {
   // const repeatedPosts = Array.from({ length: 5 }, () => allPostsData).flat();
 
   return (
-    <div className="px-6 pt-8">
+    <div className="p-6">
       {/* Top Header */}
-      <div className="border-b border-gray-300 pb-3 flex">
-        <div className=" p-4 ">
-          <Sidebar size={15} />
+      <div className="border-b border-gray-300 p-4 flex">
+        <div className="">
+          <Sidebar size={20} className="m-2" />
         </div>
-        <div className="border-l border-gray-300 flex items-center">
+        <div className=" flex items-center">
+          <div className="border-l border-gray-300 h-6 ml-2 hidden md:block"></div>
           <div className="flex items-center justify-center w-6 h-6 bg-blue-600 mx-2 ">
             <Shield size={13} color="#fff" />
           </div>

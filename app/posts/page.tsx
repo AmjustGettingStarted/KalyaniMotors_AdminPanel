@@ -129,10 +129,10 @@ const Posts = () => {
       </div>
 
       {/* All Posts */}
-      <div className="py-4">
+      <div className="py-6">
         <div className="grid lg:grid-cols-2 gap-4">
           {repeatedPosts.map((post, i) => (
-            <Card key={i} className="flex-col gap-2">
+            <Card key={i} className="flex-col gap-2 rounded-sm">
               {/* Top Content */}
               <CardHeader>
                 <CardTitle>
@@ -180,7 +180,9 @@ const Posts = () => {
               </CardHeader>
               <CardContent>
                 <div className="flex-col space-y-4">
-                  <p className="md:text-lg leading-relaxed line-clamp-3 text-slate-700 text-sm">{post.postTitle}</p>
+                  <p className="md:text-lg leading-relaxed line-clamp-3 text-slate-700 text-sm">
+                    {post.postTitle}
+                  </p>
                   <div>
                     <Image
                       src={post.url}
@@ -191,29 +193,45 @@ const Posts = () => {
                     />
                   </div>
                   {/* Comments */}
-                  <div className="py-4 ">
-                    <Card className="bg-slate-50">
-                      <CardHeader>
-                        <CardTitle className="flex items-center">
-                          <MessageSquare /> {post.commentNo} Comments
+                  <div className="py-4">
+                    <Card className="bg-slate-50 py-3 flex-col gap-2 border-none rounded-sm">
+                      <CardHeader className="px-2 text-sm text-slate-600 font-normal">
+                        <CardTitle className="flex items-center px-2 w-full justify-between">
+                          <div className="flex items-center space-x-1">
+                            <MessageSquare size={18} /> <p>{post.commentNo}</p>
+                            <p>Comments</p>
+                          </div>
+                          <div>
+                            <Button
+                              variant="ghost"
+                              className="text-blue-600 hover:text-blue-700 text-xs md:text-sm px-3 hover:bg-accent cursor-pointer"
+                            >
+                              View All
+                            </Button>
+                          </div>
                         </CardTitle>
-                        <CardAction>
-                          <Button variant="outline">View All</Button>
-                        </CardAction>
+                        {/* <CardAction className="flex items-center">
+                        </CardAction> */}
                       </CardHeader>
                       <CardContent>
-                        <div className="flex items-center justify-evenly">
-                          <p className="flex-col flex items-center">
-                            <span>{post.pending}</span>
-                            <span>Pending</span>
+                        <div className="grid grid-cols-3 gap-4 ">
+                          <p className="flex-col flex items-center ">
+                            <span className="text-xs md:text-sm text-amber-700">
+                              {post.pending}
+                            </span>
+                            <span className="text-xs">Pending</span>
                           </p>
-                          <p className="flex-col flex items-center">
-                            <span>{post.approved}</span>
-                            <span>Approved</span>
+                          <p className="flex-col flex items-center ">
+                            <span className="text-xs md:text-sm text-green-700">
+                              {post.approved}
+                            </span>
+                            <span className="text-xs"> Approved</span>
                           </p>
-                          <p className="flex-col flex items-center">
-                            <span>{post.rejected}</span>
-                            <span>Rejected</span>
+                          <p className="flex-col flex items-center ">
+                            <span className="text-xs md:text-sm text-red-700 ">
+                              {post.rejected}
+                            </span>
+                            <span className="text-xs"> Rejected</span>
                           </p>
                         </div>
                       </CardContent>
@@ -224,11 +242,14 @@ const Posts = () => {
               <CardFooter className="flex w-full gap-2">
                 <Button
                   variant="link"
-                  className="w-1/2 flex bg-green-500 text-white"
+                  className="flex h-10 items-center w-1/2 bg-green-600 hover:bg-green-700 hover:no-underline text-white rounded-sm text-base"
                 >
                   <CheckCircle /> Approve
                 </Button>
-                <Button variant="destructive" className="w-1/2">
+                <Button
+                  variant="destructive"
+                  className="flex h-10 items-center w-1/2 rounded-sm text-base hover:bg-red-700"
+                >
                   <CircleX />
                   Reject
                 </Button>

@@ -27,6 +27,7 @@ import SelectMenu from "@/components/sub/select-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
 
 const Posts = () => {
   // Function to determine the css of the posts data
@@ -55,7 +56,7 @@ const Posts = () => {
   // const repeatedPosts = Array.from({ length: 5 }, () => allPostsData).flat();
 
   return (
-    <div className="p-3 md:p-6">
+    <div className="p-4 md:p-6">
       {/* Top Header */}
       <div className="border-b border-gray-300 p-2 md:p-4 flex">
         <div className="">
@@ -69,13 +70,14 @@ const Posts = () => {
           <p>Posts & Comments Management</p>
         </div>
       </div>
+
       {/* Posts Details Cards */}
       <div className="py-6">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
           {posts_data.map((post, i) => (
             <Card key={i} className={getCss(post.heading)}>
               <CardContent>
-                <div className=" flex-col">
+                <div className="flex-col">
                   <div className="w-full flex justify-between items-center">
                     <p className="font-semibold">{post.heading}</p>
                     <p>
@@ -92,27 +94,33 @@ const Posts = () => {
       </div>
 
       {/* Filter component */}
-      <div className="p-4 border border-gray-300 rounded-md">
-        <div className="flex flex-col gap-4">
-          <div className="flex w-full">
-            <div className="w-1/2 flex">
-              <Search />
-              <Input placeholder="Searc by username, content, or post ID..." />
+      <div className="p-0 md:p-4 md:border md:border-gray-300 rounded-md">
+        <div className="flex flex-col space-y-3">
+          <div className="flex-col md:flex-row md:flex w-full">
+            <div className="w-full md:w-1/2 flex items-center space-x-2 ">
+              <Search size={18} className="text-slate-400" />
+              <Input
+                placeholder="Search by username, content, or post ID ..."
+                className="my-2 h-10 placeholder:text-base truncate"
+              />
             </div>
-            <div className="w-1/2 flex">
-              <p className="flex items-center w-1/2">
-                <Filter />
+            <div className="flex w-full md:w-1/2 md:pl-4 space-x-2">
+              <p className="flex items-center w-1/2 gap-2">
+                <Filter size={18} className="text-slate-400" />
                 <SelectMenu data={status} />
               </p>
-              <p className="flex items-center w-1/2">
-                <ArrowDownUpIcon />
+              <p className="flex items-center w-1/2 gap-2">
+                <ArrowDownUpIcon className="text-slate-400" />
                 <SelectMenu data={filterData} />
               </p>
             </div>
           </div>
-          <div>
-            <p className="">
-              <Checkbox className="mr-2 border-black items-center" /> Select all
+          <div className="hidden md:block">
+            <p className="flex items-center space-x-2">
+              <Checkbox className="mr-2 border-black " />
+              <Label className="text-base font-normal text-slate-600">
+                Select all
+              </Label>
             </p>
           </div>
         </div>

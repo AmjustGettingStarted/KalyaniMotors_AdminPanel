@@ -18,16 +18,15 @@ import React from "react";
 
 const Users = () => {
   const reapeated_users = Array(6).fill(all_users).flat();
-  console.log("users: " + reapeated_users);
   return (
-    <div className="p-6">
-      <div className="space-y-8 flex flex-col">
+    <div className="p-4 sm:p-6">
+      <div className="space-y-4 sm:space-y-8 flex flex-col">
         {/* Top Header */}
         <div>
-          <h1 className="text-4xl tracking-tight font-semibold">
+          <h1 className="text-xl sm:text-4xl tracking-tight font-semibold">
             User Management
           </h1>
-          <h3 className="text-lg font-normal text-slate-600 pt-2">
+          <h3 className="text-sm sm:text-lg font-normal text-slate-600 pt-2">
             Manage user accounts and monitor activity
           </h3>
         </div>

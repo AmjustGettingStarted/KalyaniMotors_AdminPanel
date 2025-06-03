@@ -1,16 +1,28 @@
+"use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { all_users } from "@/data/users";
 import { Ban, Calendar, CircleCheckBig, Mail, User } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 
 const AllUsers = () => {
-  const reapeated_users = Array(6).fill(all_users).flat();
-
+  const [users, setUsers] = useState(all_users);
+  const toggleBlockStatus = (userId: number) => {
+    setUsers((prev) =>
+      prev.map((user) =>
+        user.id === userId
+          ? {
+              ...user,
+              status: user.status === "blocked" ? "active" : "blocked", 
+            }
+          : user
+      )
+    );
+  };
   return (
     <>
-      {reapeated_users.map((user, i) => (
+      {users.map((user, i) => (
         <Card key={i} className="rounded-sm shadow-none py-4 overflow-x-auto">
           <CardHeader className="px-4 sm:px-6">
             <CardTitle>
@@ -58,7 +70,7 @@ const AllUsers = () => {
                     </p>
                     {/* Third Line */}
                     <div className="flex flex-col sm:flex-row line-clamp-3  items-start sm:items-center text-slate-600 text-xs sm:text-base space-x-4 space-y-1 font-normal w-full overflow-hidden">
-                      <p className="flex items-center gap-1 ">
+                      <p className="flex items-center gap-1 overflow-hidden ">
                         <Calendar size={15} /> Joined {user.joined} ago
                       </p>
                       <div className="flex justify-between items-center w-full sm:w-auto mb-3 sm:mb-0 space-x-4">
@@ -76,23 +88,22 @@ const AllUsers = () => {
                   >
                     View Profile
                   </Button>
-                  {user.status === "blocked" ? (
-                    <Button
-                      variant="outline"
-                      className="w-full sm:w-auto cursor-pointer  text-green-600 border-green-300 hover:bg-green-50 hover:text-green-700"
-                    >
+                  <Button
+                    variant="outline"
+                    className={`cursor-pointer ${
+                      user.status === "blocked"
+                        ? "text-green-600 border-green-300 hover:bg-green-50"
+                        : "text-red-600 border-red-300 hover:bg-red-50"
+                    }`}
+                    onClick={() => toggleBlockStatus(user.id)}
+                  >
+                    {user.status === "blocked" ? (
                       <CircleCheckBig className="mr-2" />
-                      Unblock User
-                    </Button>
-                  ) : (
-                    <Button
-                      variant="outline"
-                      className="w-full sm:w-auto cursor-pointer text-red-600 border-red-300 hover:bg-red-50 hover:text-red-700"
-                    >
+                    ) : (
                       <Ban className="mr-1" />
-                      Block User
-                    </Button>
-                  )}
+                    )}
+                    {user.status === "blocked" ? "Unblock User" : "Block User"}
+                  </Button>
                 </div>
               </div>
             </CardTitle>

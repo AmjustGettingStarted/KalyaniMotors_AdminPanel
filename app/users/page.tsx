@@ -1,9 +1,18 @@
 import SelectMenu from "@/components/sub/select-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { filterData } from "@/data/posts";
 import { all_users, users_count, users_select } from "@/data/users";
-import { ArrowDownUpIcon, Filter, Search } from "lucide-react";
+import {
+  ArrowDownUpIcon,
+  Ban,
+  Calendar,
+  Filter,
+  Mail,
+  Search,
+} from "lucide-react";
 import React from "react";
 
 const Users = () => {
@@ -67,7 +76,44 @@ const Users = () => {
           {reapeated_users.map((user, i) => (
             <Card key={i} className="rounded-sm">
               <CardHeader>
-                <CardTitle>Card Title</CardTitle>
+                <CardTitle>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center w-[80%]">
+                      <div>
+                        <Avatar>
+                          <AvatarImage src={user.avatar} />
+                          <AvatarFallback>CN</AvatarFallback>
+                        </Avatar>
+                      </div>
+                      <div className="flex flex-col items-start w-full">
+                        <div className="flex items-center space-x-4">
+                          <h1>@{user.name}</h1>
+                          <p>{user.status}</p>
+                          <p>ID: {user.id}</p>
+                        </div>
+                        <p className="flex items-center">
+                          <Mail />
+                          {user.mail}
+                        </p>
+                        <div className="flex items-center">
+                          <Calendar />
+                          <p>Joined {user.joined} ago</p>
+                          <p>{user.posts} Posts</p>
+                          <p>Last active {user.last_active} days ago</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center w-[20%}">
+                      <Button variant="outline" className="cursor-pointer">
+                        View Profile
+                      </Button>
+                      <Button variant="outline" className="cursor-pointer">
+                        <Ban className="mr-2" />
+                        Block User
+                      </Button>
+                    </div>
+                  </div>
+                </CardTitle>
               </CardHeader>
             </Card>
           ))}

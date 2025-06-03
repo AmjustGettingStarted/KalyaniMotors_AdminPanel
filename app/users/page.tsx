@@ -36,14 +36,14 @@ const Users = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {users_count.map((item, i) => (
             <Card key={i} className="rounded-sm">
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-2">
                 <div className="flex justify-between items-center">
                   <p>{item.lable}</p>
                   <p>
-                    <item.icon />
+                    <item.icon size={15} />
                   </p>
                 </div>
-                <p>{item.count}</p>
+                <p className="text-2xl font-bold">{item.count}</p>
               </CardContent>
             </Card>
           ))}
@@ -127,14 +127,28 @@ const Users = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="flex items-center w-[20%}">
+                    {/* Right side buttons */}
+                    <div className="flex items-center w-[20%} gap-2">
                       <Button variant="outline" className="cursor-pointer">
                         View Profile
                       </Button>
-                      <Button variant="outline" className="cursor-pointer">
-                        <Ban className="mr-2" />
-                        Block User
-                      </Button>
+                      {user.status === "blocked" ? (
+                        <Button
+                          variant="outline"
+                          className="cursor-pointer text-green-600 border-green-300 hover:bg-green-50 hover:text-green-700"
+                        >
+                          <CircleCheckBig className="mr-2" />
+                          Unblock User
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          className="cursor-pointer text-red-600 border-red-300 hover:bg-red-50 hover:text-red-700"
+                        >
+                          <Ban className="mr-1" />
+                          Block User
+                        </Button>
+                      )}
                     </div>
                   </div>
                 </CardTitle>

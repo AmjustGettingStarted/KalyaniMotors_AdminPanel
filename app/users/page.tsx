@@ -35,12 +35,30 @@ const Users = () => {
         {/* Users Count Card Section */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {users_count.map((item, i) => (
-            <Card key={i} className="rounded-sm">
+            <Card key={i} className="rounded-sm shadow-xs">
               <CardContent className="space-y-2">
                 <div className="flex justify-between items-center">
-                  <p>{item.lable}</p>
-                  <p>
-                    <item.icon size={15} />
+                  <p
+                    className={`${
+                      item.lable === "Active Users"
+                        ? "text-green-600"
+                        : item.lable === "Blocked"
+                        ? "text-red-600"
+                        : ""
+                    }`}
+                  >
+                    {item.lable}
+                  </p>
+                  <p
+                    className={`${
+                      item.lable === "Active Users"
+                        ? "text-green-500"
+                        : item.lable === "Blocked"
+                        ? "text-red-500"
+                        : "text-slate-500"
+                    }`}
+                  >
+                    <item.icon size={17} />
                   </p>
                 </div>
                 <p className="text-2xl font-bold">{item.count}</p>

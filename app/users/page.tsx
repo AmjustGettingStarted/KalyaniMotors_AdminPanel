@@ -92,14 +92,15 @@ const Users = () => {
         {/* All Users  */}
         <div className="flex flex-col space-y-4">
           {reapeated_users.map((user, i) => (
-            <Card key={i} className="rounded-sm shadow-none">
-              <CardHeader>
+            <Card key={i} className="rounded-sm shadow-none py-4">
+              <CardHeader className="px-4 sm:px-6">
                 <CardTitle>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center w-[80%] space-x-4">
+                  <div className="flex flex-col sm:flex-row items-center justify-between space-y-4">
+                    {/* Left Content - Card */}
+                    <div className="flex items-center w-full sm:w-[80%] space-x-4 mb-0">
                       {/* Left Avatar */}
-                      <div>
-                        <Avatar className="size-12">
+                      <div className="">
+                        <Avatar className="size-9 sm:size-12 mb-0">
                           <AvatarImage src={user.avatar} />
                           <AvatarFallback>CN</AvatarFallback>
                         </Avatar>
@@ -107,12 +108,12 @@ const Users = () => {
                       {/* Left Middle group */}
                       <div className="flex flex-col items-start space-y-1 w-full">
                         {/* First Line */}
-                        <div className="flex items-center space-x-4">
-                          <h1 className="font-medium text-base sm:text-lg">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center space-x-4 space-y-1 w-full">
+                          <h1 className="font-medium text-sm sm:text-lg">
                             @{user.name}
                           </h1>
                           <p
-                            className={`capitalize text-sm px-2 rounded-full flex items-center gap-1 font-medium ${
+                            className={`capitalize text-xs sm:text-sm px-2 rounded-full flex items-center gap-1 font-medium w-full sm:w-auto py-1 ${
                               user.status === "active"
                                 ? "bg-green-100 text-green-800 border border-green-600"
                                 : "bg-red-100 text-red-800 border border-red-600"
@@ -130,29 +131,34 @@ const Users = () => {
                           </p>
                         </div>
                         {/* Second Line */}
-                        <p className="flex items-center text-slate-600 text-sm sm:text-base truncate font-normal ">
+                        <p className="flex items-center text-slate-600 text-xs sm:text-base truncate font-normal ">
                           <Mail className="mr-1 " size={15} />
                           {user.mail}
                         </p>
                         {/* Third Line */}
-                        <div className="flex items-center text-slate-600 text-sm sm:text-base space-x-4 font-normal">
-                          <p className="flex items-center gap-1">
+                        <div className="flex flex-col sm:flex-row  items-start sm:items-center text-slate-600 text-xs sm:text-base space-x-4 font-normal w-full">
+                          <p className="flex items-center gap-1 ">
                             <Calendar size={15} /> Joined {user.joined} ago
                           </p>
-                          <p>{user.posts} Posts</p>
-                          <p>Last active {user.last_active} days ago</p>
+                          <div className="flex justify-between items-center w-full sm:w-auto  ">
+                            <p>{user.posts} Posts</p>
+                            <p>Last active {user.last_active} days ago</p>
+                          </div>
                         </div>
                       </div>
                     </div>
                     {/* Right side buttons */}
-                    <div className="flex items-center w-[20%} gap-2">
-                      <Button variant="outline" className="cursor-pointer">
+                    <div className="flex flex-col sm:flex-row items-center w-full sm:flex-1 gap-2">
+                      <Button
+                        variant="outline"
+                        className="w-full sm:w-auto cursor-pointer "
+                      >
                         View Profile
                       </Button>
                       {user.status === "blocked" ? (
                         <Button
                           variant="outline"
-                          className="cursor-pointer text-green-600 border-green-300 hover:bg-green-50 hover:text-green-700"
+                          className="w-full sm:w-auto cursor-pointer  text-green-600 border-green-300 hover:bg-green-50 hover:text-green-700"
                         >
                           <CircleCheckBig className="mr-2" />
                           Unblock User
@@ -160,7 +166,7 @@ const Users = () => {
                       ) : (
                         <Button
                           variant="outline"
-                          className="cursor-pointer text-red-600 border-red-300 hover:bg-red-50 hover:text-red-700"
+                          className="w-full sm:w-auto cursor-pointer text-red-600 border-red-300 hover:bg-red-50 hover:text-red-700"
                         >
                           <Ban className="mr-1" />
                           Block User

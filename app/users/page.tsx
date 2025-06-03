@@ -27,7 +27,7 @@ const Users = () => {
           <h1 className="text-4xl tracking-tight font-semibold">
             User Management
           </h1>
-          <h3 className="text-lg font-normal text-slate-600">
+          <h3 className="text-lg font-normal text-slate-600 pt-2">
             Manage user accounts and monitor activity
           </h3>
         </div>
@@ -38,17 +38,7 @@ const Users = () => {
             <Card key={i} className="rounded-sm shadow-xs">
               <CardContent className="space-y-2">
                 <div className="flex justify-between items-center">
-                  <p
-                    className={`${
-                      item.lable === "Active Users"
-                        ? "text-green-600"
-                        : item.lable === "Blocked"
-                        ? "text-red-600"
-                        : ""
-                    }`}
-                  >
-                    {item.lable}
-                  </p>
+                  <p>{item.lable}</p>
                   <p
                     className={`${
                       item.lable === "Active Users"
@@ -61,7 +51,17 @@ const Users = () => {
                     <item.icon size={17} />
                   </p>
                 </div>
-                <p className="text-2xl font-bold">{item.count}</p>
+                <p
+                  className={`text-2xl font-bold ${
+                    item.lable === "Active Users"
+                      ? "text-green-600"
+                      : item.lable === "Blocked"
+                      ? "text-red-600"
+                      : ""
+                  }`}
+                >
+                  {item.count}
+                </p>
               </CardContent>
             </Card>
           ))}

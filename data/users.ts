@@ -42,5 +42,16 @@ export const all_users = [
     posts: 15,
     last_active: 11,
   },
+    {
+    avatar:
+      "",
+    name: "jeff",
+    status: "active",
+    id: 1,
+    mail: "jeff@example.com",
+    joined: "1 days",
+    posts: 100,
+    last_active: 1,
+  }
   
 ];

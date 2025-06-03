@@ -2,15 +2,14 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { all_users } from "@/data/users";
-import { Ban, Calendar, CircleCheckBig, Mail } from "lucide-react";
+import { Ban, Calendar, CircleCheckBig, Mail, User } from "lucide-react";
 import React from "react";
 
 const AllUsers = () => {
-    const reapeated_users = Array(6).fill(all_users).flat();
-  
+  const reapeated_users = Array(6).fill(all_users).flat();
+
   return (
     <>
-      
       {reapeated_users.map((user, i) => (
         <Card key={i} className="rounded-sm shadow-none py-4">
           <CardHeader className="px-4 sm:px-6">
@@ -22,7 +21,9 @@ const AllUsers = () => {
                   <div className="">
                     <Avatar className="size-9 sm:size-12 mb-0">
                       <AvatarImage src={user.avatar} />
-                      <AvatarFallback>CN</AvatarFallback>
+                      <AvatarFallback>
+                        <User />
+                      </AvatarFallback>
                     </Avatar>
                   </div>
                   {/* Left Middle group */}

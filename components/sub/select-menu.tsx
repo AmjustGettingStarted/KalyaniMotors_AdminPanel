@@ -10,16 +10,17 @@ import {
 interface DataProps {
   data: string[];
 }
-const SelectMenu: React.FC<DataProps> = ({data}) => {
+const SelectMenu: React.FC<DataProps> = ({ data }) => {
   return (
     <Select>
-      <SelectTrigger className="w-full">
-        <SelectValue  placeholder={data[0]}/>
+      <SelectTrigger className="w-full cursor-pointer">
+        <SelectValue placeholder={data[0]} />
       </SelectTrigger>
       <SelectContent>
-        {data.map((Item,i)=>(
-
-        <SelectItem key={i} value={Item}>{Item}</SelectItem>
+        {data.map((Item, i) => (
+          <SelectItem key={i} value={Item}>
+            {Item}
+          </SelectItem>
         ))}
       </SelectContent>
     </Select>

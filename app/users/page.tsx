@@ -91,7 +91,9 @@ const Users = () => {
                       <div className="flex flex-col items-start space-y-1 w-full">
                         {/* First Line */}
                         <div className="flex items-center space-x-4">
-                          <h1 className="font-medium text-lg">@{user.name}</h1>
+                          <h1 className="font-medium text-base sm:text-lg">
+                            @{user.name}
+                          </h1>
                           <p
                             className={`capitalize text-sm px-2 rounded-full flex items-center gap-1 font-medium ${
                               user.status === "active"
@@ -111,14 +113,15 @@ const Users = () => {
                           </p>
                         </div>
                         {/* Second Line */}
-                        <p className="flex items-center text-slate-600 text-sm truncate ">
+                        <p className="flex items-center text-slate-600 text-sm sm:text-base truncate font-normal ">
                           <Mail className="mr-1 " size={15} />
                           {user.mail}
                         </p>
                         {/* Third Line */}
-                        <div className="flex items-center">
-                          <Calendar />
-                          <p>Joined {user.joined} ago</p>
+                        <div className="flex items-center text-slate-600 text-sm sm:text-base space-x-4 font-normal">
+                          <p className="flex items-center gap-1">
+                            <Calendar size={15} /> Joined {user.joined} ago
+                          </p>
                           <p>{user.posts} Posts</p>
                           <p>Last active {user.last_active} days ago</p>
                         </div>

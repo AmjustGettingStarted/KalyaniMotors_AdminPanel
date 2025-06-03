@@ -59,7 +59,7 @@ const Posts = () => {
     <div className="p-4 md:p-6">
       {/* Top Header */}
       <div className="border-b border-gray-300 p-2 md:p-4 flex">
-        <div className="">
+        <div className="cursor-pointer">
           <Sidebar size={20} className="m-2" />
         </div>
         <div className=" flex items-center">
@@ -119,7 +119,7 @@ const Posts = () => {
           </div>
           <div className="hidden md:block">
             <p className="flex items-center space-x-2">
-              <Checkbox className="mr-2 border-black " />
+              <Checkbox className="mr-2 border-black cursor-pointer" />
               <Label className="text-base font-normal text-slate-600">
                 Select all
               </Label>
@@ -137,7 +137,7 @@ const Posts = () => {
               <CardHeader>
                 <CardTitle>
                   <div className="flex items-center space-x-2 md:space-x-4">
-                    <Checkbox className="border-black " />
+                    <Checkbox className="border-black cursor-pointer " />
                     <Avatar>
                       <AvatarImage src={post.avatar} />
                       <AvatarFallback>
@@ -173,7 +173,7 @@ const Posts = () => {
                       {post.status}
                     </p>
                     <p>
-                      <ExternalLinkIcon size={18} />
+                      <ExternalLinkIcon size={18} className="cursor-pointer" />
                     </p>
                   </div>
                 </CardAction>
@@ -241,8 +241,8 @@ const Posts = () => {
               </CardContent>
               <CardFooter className="flex w-full gap-2">
                 <Button
-                  variant="link"
-                  className="flex h-10 items-center w-1/2 bg-green-600 hover:bg-green-700 hover:no-underline text-white rounded-sm  cursor-pointer text-base"
+                  variant="outline"
+                  className="flex h-10  items-center w-1/2 bg-green-600 hover:bg-green-700  text-white hover:text-white rounded-sm  cursor-pointer text-base"
                 >
                   <CheckCircle /> Approve
                 </Button>

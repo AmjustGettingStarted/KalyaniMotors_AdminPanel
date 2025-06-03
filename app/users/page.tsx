@@ -1,12 +1,14 @@
 import SelectMenu from "@/components/sub/select-menu";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { filterData } from "@/data/posts";
-import { users_count, users_select } from "@/data/users";
+import { all_users, users_count, users_select } from "@/data/users";
 import { ArrowDownUpIcon, Filter, Search } from "lucide-react";
 import React from "react";
 
 const Users = () => {
+  const reapeated_users = Array(6).fill(all_users).flat();
+  console.log("users: " + reapeated_users);
   return (
     <div className="p-6">
       <div className="space-y-8 flex flex-col">
@@ -61,7 +63,15 @@ const Users = () => {
         </div>
 
         {/* All Users  */}
-        <div className="flex flex-col space-y-4"></div>
+        <div className="flex flex-col space-y-4">
+          {reapeated_users.map((user, i) => (
+            <Card key={i} className="rounded-sm">
+              <CardHeader>
+                <CardTitle>Card Title</CardTitle>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
       </div>
     </div>
   );

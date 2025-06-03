@@ -9,6 +9,7 @@ import {
   ArrowDownUpIcon,
   Ban,
   Calendar,
+  CircleCheckBig,
   Filter,
   Mail,
   Search,
@@ -74,22 +75,40 @@ const Users = () => {
         {/* All Users  */}
         <div className="flex flex-col space-y-4">
           {reapeated_users.map((user, i) => (
-            <Card key={i} className="rounded-sm">
+            <Card key={i} className="rounded-sm shadow-none">
               <CardHeader>
                 <CardTitle>
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center w-[80%]">
+                    <div className="flex items-center w-[80%] space-x-4">
+                      {/* Left Avatar */}
                       <div>
-                        <Avatar>
+                        <Avatar className="size-12">
                           <AvatarImage src={user.avatar} />
                           <AvatarFallback>CN</AvatarFallback>
                         </Avatar>
                       </div>
-                      <div className="flex flex-col items-start w-full">
+                      {/* Left Middle group */}
+                      <div className="flex flex-col items-start space-y-2 w-full">
+                        {/* First Line */}
                         <div className="flex items-center space-x-4">
-                          <h1>@{user.name}</h1>
-                          <p>{user.status}</p>
-                          <p>ID: {user.id}</p>
+                          <h1 className="font-medium text-lg">@{user.name}</h1>
+                          <p
+                            className={`capitalize text-sm px-2 rounded-full flex items-center gap-1 font-medium ${
+                              user.status === "active"
+                                ? "bg-green-100 text-green-800 border border-green-600"
+                                : "bg-red-100 text-red-800 border border-red-600"
+                            }`}
+                          >
+                            {user.status === "active" ? (
+                              <CircleCheckBig size={13} />
+                            ) : (
+                              <Ban size={13} />
+                            )}
+                            {user.status}
+                          </p>
+                          <p className="text-xs hidden sm:inline text-slate-400">
+                            ID: {user.id}
+                          </p>
                         </div>
                         <p className="flex items-center">
                           <Mail />

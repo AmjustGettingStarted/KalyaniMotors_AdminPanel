@@ -11,12 +11,12 @@ const AllUsers = () => {
   return (
     <>
       {reapeated_users.map((user, i) => (
-        <Card key={i} className="rounded-sm shadow-none py-4">
+        <Card key={i} className="rounded-sm shadow-none py-4 overflow-x-auto">
           <CardHeader className="px-4 sm:px-6">
             <CardTitle>
-              <div className="flex flex-col sm:flex-row items-center justify-between space-y-4">
+              <div className="flex flex-col md:flex-row items-center justify-between space-y-4">
                 {/* Left Content - Card */}
-                <div className="flex items-center w-full sm:w-[80%] space-x-4 mb-0">
+                <div className="flex items-center w-full sm:w-[50%] md:w-[60%] lg:w-[80%] space-x-4 mb-0">
                   {/* Left Avatar */}
                   <div className="">
                     <Avatar className="size-9 sm:size-12 mb-0">
@@ -57,7 +57,7 @@ const AllUsers = () => {
                       {user.mail}
                     </p>
                     {/* Third Line */}
-                    <div className="flex flex-col sm:flex-row  items-start sm:items-center text-slate-600 text-xs sm:text-base space-x-4 space-y-1 font-normal w-full">
+                    <div className="flex flex-col sm:flex-row line-clamp-3  items-start sm:items-center text-slate-600 text-xs sm:text-base space-x-4 space-y-1 font-normal w-full overflow-hidden">
                       <p className="flex items-center gap-1 ">
                         <Calendar size={15} /> Joined {user.joined} ago
                       </p>

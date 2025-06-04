@@ -1,5 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { choose_colors } from "@/data/settings";
 import React from "react";
 
 const Settings = () => {
@@ -24,7 +31,8 @@ const Settings = () => {
               <CardHeader>
                 <CardTitle>Appearance</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col">
+                {/* Select theme */}
                 <div>
                   <h1>Theme</h1>
                   <Select>
@@ -37,6 +45,25 @@ const Settings = () => {
                       <SelectItem value="system">System</SelectItem>
                     </SelectContent>
                   </Select>
+                </div>
+                {/* Select Color */}
+                <div className="flex flex-col">
+                  <h1>Primary Color</h1>
+                  <div className="grid grid-cols-3 gap-2">
+                    {choose_colors.map((colors, i) => (
+                      <Card
+                        className="p-2 rounded-sm w-full shadow-none"
+                        key={i}
+                      >
+                        <CardContent className="flex items-center gap-4 justify-start w-full px-2">
+                          <p
+                            className={`w-5 h-5 rounded-full ${colors.bg} `}
+                          ></p>
+                          <p>{colors.color}</p>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
                 </div>
               </CardContent>
             </Card>

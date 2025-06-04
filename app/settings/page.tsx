@@ -30,7 +30,7 @@ import React from "react";
 
 const Settings = () => {
   return (
-    <div className="p-6">
+    <div className="p-6 ">
       <div className="space-y-4 sm:space-y-8 flex flex-col">
         {/* Top Header */}
         <div>
@@ -101,7 +101,7 @@ const Settings = () => {
             <Card className="rounded-sm shadow-xs">
               <CardHeader>
                 <CardTitle>
-                  <p className="flex gap-2">
+                  <p className="flex gap-2 items-center text-xl font-semibold">
                     <Bell />
                     Notifications
                   </p>
@@ -112,19 +112,21 @@ const Settings = () => {
                   {/* Email Notfication */}
                   <div className="flex justify-between items-center">
                     <div className="flex flex-col">
-                      <p>Email Notfications</p>
-                      <p>Receive email alerts for new posts</p>
+                      <p className="text-lg font-medium">Email Notfications</p>
+                      <p className="text-sm text-slate-600">
+                        Receive email alerts for new posts
+                      </p>
                     </div>
                     <div>
-                      <Switch className="cursor-pointer" />
+                      <Switch className="cursor-pointer " />
                     </div>
                   </div>
                   <Separator />
                   {/* Push Notfication */}
                   <div className="flex justify-between items-center">
                     <div className="flex flex-col">
-                      <p>Push Notfications</p>
-                      <p>Browser push notifications</p>
+                      <p className="text-lg font-medium">Push Notfications</p>
+                      <p className="text-sm text-slate-600">Browser push notifications</p>
                     </div>
                     <div>
                       <Switch className="cursor-pointer" />
@@ -134,8 +136,8 @@ const Settings = () => {
                   {/* Moderation Notfication */}
                   <div className="flex justify-between items-center">
                     <div className="flex flex-col">
-                      <p>Moderation Alerts</p>
-                      <p>
+                      <p className="text-lg font-medium">Moderation Alerts</p>
+                      <p className="text-sm text-slate-600">
                         Browser push notificationsUrgent moderation
                         notifications
                       </p>

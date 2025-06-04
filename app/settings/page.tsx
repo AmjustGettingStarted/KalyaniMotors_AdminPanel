@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
+import { Textarea } from "@/components/ui/textarea";
 import { choose_colors } from "@/data/settings";
 import { Bell, Palette, Shield } from "lucide-react";
 import React from "react";
@@ -178,9 +179,17 @@ const Settings = () => {
                   <p>Maximum characters allowed per post</p>
                 </div>
               </div>
+              <div className="flex flex-col">
+                <h1>Blocked Keywords</h1>
+                <Textarea defaultValue="spam offensive" />
+                <p>Posts containing these keywords will be auto-flagged</p>
+              </div>
             </CardContent>
             <CardFooter>
-              <p>Card Footer</p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="">hi</div>
+                <div className="">he</div>
+              </div>
             </CardFooter>
           </Card>
         </div>

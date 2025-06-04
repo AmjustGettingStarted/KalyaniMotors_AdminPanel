@@ -7,7 +7,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
 import { choose_colors } from "@/data/settings";
+import { Bell, Palette } from "lucide-react";
 import React from "react";
 
 const Settings = () => {
@@ -30,12 +32,16 @@ const Settings = () => {
           <div>
             <Card className="rounded-sm shadow-xs">
               <CardHeader>
-                <CardTitle>Appearance</CardTitle>
+                <CardTitle>
+                  <p className="flex gap-2">
+                    <Palette /> Appearance
+                  </p>
+                </CardTitle>
               </CardHeader>
               <CardContent className="flex flex-col">
                 {/* Select theme */}
                 <div>
-                  <h1>Theme</h1>
+                  <h1> Theme</h1>
                   <Select>
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Light" />
@@ -74,10 +80,26 @@ const Settings = () => {
           <div>
             <Card className="rounded-sm shadow-xs">
               <CardHeader>
-                <CardTitle>Notifications</CardTitle>
+                <CardTitle>
+                  <p className="flex gap-2">
+                    <Bell />
+                    Notifications
+                  </p>
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <p>Card Content</p>
+                <div className="flex flex-col">
+                  {/* Email Notfication */}
+                  <div className="flex justify-between items-center">
+                    <div className="flex flex-col">
+                      <p>Email Notfications</p>
+                      <p>Receive email alerts for new posts</p>
+                    </div>
+                    <div>
+                      <Switch />
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>

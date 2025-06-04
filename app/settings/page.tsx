@@ -108,7 +108,7 @@ const Settings = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-col space-y-4">
+                <div className="flex flex-col space-y-5">
                   {/* Email Notfication */}
                   <div className="flex justify-between items-center">
                     <div className="flex flex-col">
@@ -138,7 +138,7 @@ const Settings = () => {
                     <div className="flex flex-col">
                       <p className="text-lg font-medium">Moderation Alerts</p>
                       <p className="text-sm text-slate-600">
-                        Browser push notificationsUrgent moderation
+                        Urgent moderation
                         notifications
                       </p>
                     </div>

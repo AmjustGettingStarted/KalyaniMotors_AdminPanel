@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
   SelectContent,
@@ -89,7 +89,7 @@ const Settings = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-col">
+                <div className="flex flex-col space-y-4">
                   {/* Email Notfication */}
                   <div className="flex justify-between items-center">
                     <div className="flex flex-col">
@@ -116,7 +116,10 @@ const Settings = () => {
                   <div className="flex justify-between items-center">
                     <div className="flex flex-col">
                       <p>Moderation Alerts</p>
-                      <p>Browser push notificationsUrgent moderation notifications</p>
+                      <p>
+                        Browser push notificationsUrgent moderation
+                        notifications
+                      </p>
                     </div>
                     <div>
                       <Switch />
@@ -126,6 +129,21 @@ const Settings = () => {
               </CardContent>
             </Card>
           </div>
+        </div>
+
+        {/* Moderation Rules */}
+        <div className="px-4 py-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Card Title</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Card Content</p>
+            </CardContent>
+            <CardFooter>
+              <p>Card Footer</p>
+            </CardFooter>
+          </Card>
         </div>
       </div>
     </div>

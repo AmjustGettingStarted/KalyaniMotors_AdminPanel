@@ -7,6 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { choose_colors } from "@/data/settings";
 import { Bell, Palette } from "lucide-react";
@@ -94,6 +95,28 @@ const Settings = () => {
                     <div className="flex flex-col">
                       <p>Email Notfications</p>
                       <p>Receive email alerts for new posts</p>
+                    </div>
+                    <div>
+                      <Switch />
+                    </div>
+                  </div>
+                  <Separator />
+                  {/* Push Notfication */}
+                  <div className="flex justify-between items-center">
+                    <div className="flex flex-col">
+                      <p>Push Notfications</p>
+                      <p>Browser push notifications</p>
+                    </div>
+                    <div>
+                      <Switch />
+                    </div>
+                  </div>
+                  <Separator />
+                  {/* Moderation Notfication */}
+                  <div className="flex justify-between items-center">
+                    <div className="flex flex-col">
+                      <p>Moderation Alerts</p>
+                      <p>Browser push notificationsUrgent moderation notifications</p>
                     </div>
                     <div>
                       <Switch />

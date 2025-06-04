@@ -80,7 +80,7 @@ const Users = () => {
         </div>
 
         {/* All Users  */}
-        <div className="flex flex-col overflow-x-auto">
+        <div className="flex flex-col overflow-x-auto space-y-4">
           <AllUsers />
         </div>
       </div>

@@ -140,8 +140,8 @@ const Settings = () => {
         </div>
 
         {/* Moderation Rules */}
-        <div className="px-4 py-6">
-          <Card>
+        <div>
+          <Card className="rounded-sm shadow-none">
             <CardHeader>
               <CardTitle>
                 <p className="flex gap-2 items-center">
@@ -186,9 +186,25 @@ const Settings = () => {
               </div>
             </CardContent>
             <CardFooter>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="">hi</div>
-                <div className="">he</div>
+              <div className="grid grid-cols-2 gap-4 w-full">
+                <div className="flex items-center justify-between">
+                  <p>
+                    <h1>Require Manual Approval</h1>
+                    <h2>All posts need manual review</h2>
+                  </p>
+                  <p>
+                    <Switch />
+                  </p>
+                </div>
+                <div className="flex items-center justify-between">
+                  <p>
+                    <h1>Allow Anonymous Posts</h1>
+                    <h2>Users can post without accounts</h2>
+                  </p>
+                  <p>
+                    <Switch />
+                  </p>
+                </div>
               </div>
             </CardFooter>
           </Card>

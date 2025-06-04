@@ -49,15 +49,15 @@ const Settings = () => {
             <Card className="rounded-sm shadow-xs">
               <CardHeader>
                 <CardTitle>
-                  <p className="flex gap-2">
+                  <p className="flex gap-2 text-xl font-medium items-center">
                     <Palette /> Appearance
                   </p>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col">
+              <CardContent className="flex flex-col gap-4">
                 {/* Select theme */}
-                <div>
-                  <h1> Theme</h1>
+                <div className="flex flex-col gap-2">
+                  <h1 className="text-lg"> Theme</h1>
                   <Select>
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Light" />
@@ -70,20 +70,24 @@ const Settings = () => {
                   </Select>
                 </div>
                 {/* Select Color */}
-                <div className="flex flex-col">
-                  <h1>Primary Color</h1>
+                <div className="flex flex-col gap-2">
+                  <h1 className="text-lg font-normal tracking-tight">
+                    Primary Color
+                  </h1>
                   <div className="grid grid-cols-3 gap-2">
                     {choose_colors.map((colors, i) => (
                       <Button
                         variant="outline"
-                        className=" rounded-sm w-full shadow-none h-12"
+                        className=" rounded-sm w-full shadow-none h-12 cursor-pointer"
                         key={i}
                       >
-                        <div className="flex items-center gap-4 justify-start w-full h-8">
+                        <div className="flex items-center gap-2 justify-start w-full h-8">
                           <p
                             className={`w-5 h-5 rounded-full ${colors.bg} `}
                           ></p>
-                          <p>{colors.color}</p>
+                          <p className="text-base font-normal">
+                            {colors.color}
+                          </p>
                         </div>
                       </Button>
                     ))}
@@ -263,7 +267,10 @@ const Settings = () => {
               <CardTitle>
                 <div className="flex items-center justify-between w-full">
                   <p>Changes will be applied to the admin panel immediately</p>
-                  <Button variant="outline" className="flex items-center gap-2">
+                  <Button
+                    variant="outline"
+                    className="flex items-center gap-2 cursor-pointer"
+                  >
                     <Save />
                     Save Settings
                   </Button>

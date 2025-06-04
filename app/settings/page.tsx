@@ -1,5 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -10,7 +17,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { choose_colors } from "@/data/settings";
-import { Bell, Palette } from "lucide-react";
+import { Bell, Palette, Shield } from "lucide-react";
 import React from "react";
 
 const Settings = () => {
@@ -135,10 +142,42 @@ const Settings = () => {
         <div className="px-4 py-6">
           <Card>
             <CardHeader>
-              <CardTitle>Card Title</CardTitle>
+              <CardTitle>
+                <p className="flex gap-2 items-center">
+                  <Shield />
+                  <h1 className="text-lg">Moderations Rules</h1>
+                </p>
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <p>Card Content</p>
+              <div className="grid grid-cols-2 gap-4">
+                {/* Threshold */}
+                <div className="flex flex-col">
+                  <p>Auto-approve Threshold</p>
+                  <p>
+                    <Select>
+                      <SelectTrigger className="w-full cursor-pointer">
+                        <SelectValue placeholder="5+ approve posts" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="1">Never auto-appprove</SelectItem>
+                        <SelectItem value="2">5+ approve posts</SelectItem>
+                        <SelectItem value="3">10+ approve posts</SelectItem>
+                        <SelectItem value="4">20+ approve posts</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </p>
+                  <p>Automatically approve posts from trusted users</p>
+                </div>
+                {/*  Max Uploads */}
+                <div className="flex flex-col ">
+                  <p>Max Post Length</p>
+                  <p>
+                    <Input type="number" defaultValue={500} />
+                  </p>
+                  <p>Maximum characters allowed per post</p>
+                </div>
+              </div>
             </CardContent>
             <CardFooter>
               <p>Card Footer</p>

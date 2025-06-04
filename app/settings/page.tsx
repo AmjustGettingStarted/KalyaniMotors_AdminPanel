@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import React from "react";
 
 const Settings = () => {
@@ -21,10 +22,22 @@ const Settings = () => {
           <div>
             <Card className="rounded-sm shadow-xs">
               <CardHeader>
-                <CardTitle>Card Title</CardTitle>
+                <CardTitle>Appearance</CardTitle>
               </CardHeader>
               <CardContent>
-                <p>Card Content</p>
+                <div>
+                  <h1>Theme</h1>
+                  <Select>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Light" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="light">Light</SelectItem>
+                      <SelectItem value="dark">Dark</SelectItem>
+                      <SelectItem value="system">System</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -32,7 +45,7 @@ const Settings = () => {
           <div>
             <Card className="rounded-sm shadow-xs">
               <CardHeader>
-                <CardTitle>Card Title</CardTitle>
+                <CardTitle>Notifications</CardTitle>
               </CardHeader>
               <CardContent>
                 <p>Card Content</p>

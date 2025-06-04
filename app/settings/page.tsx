@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
@@ -51,17 +52,18 @@ const Settings = () => {
                   <h1>Primary Color</h1>
                   <div className="grid grid-cols-3 gap-2">
                     {choose_colors.map((colors, i) => (
-                      <Card
-                        className="p-2 rounded-sm w-full shadow-none"
+                      <Button
+                        variant="outline"
+                        className=" rounded-sm w-full shadow-none h-12"
                         key={i}
                       >
-                        <CardContent className="flex items-center gap-4 justify-start w-full px-2">
+                        <div className="flex items-center gap-4 justify-start w-full h-8">
                           <p
                             className={`w-5 h-5 rounded-full ${colors.bg} `}
                           ></p>
                           <p>{colors.color}</p>
-                        </CardContent>
-                      </Card>
+                        </div>
+                      </Button>
                     ))}
                   </div>
                 </div>

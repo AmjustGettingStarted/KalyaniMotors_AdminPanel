@@ -112,7 +112,7 @@ const Settings = () => {
                       <p>Receive email alerts for new posts</p>
                     </div>
                     <div>
-                      <Switch  className="cursor-pointer"/>
+                      <Switch className="cursor-pointer" />
                     </div>
                   </div>
                   <Separator />
@@ -123,7 +123,7 @@ const Settings = () => {
                       <p>Browser push notifications</p>
                     </div>
                     <div>
-                      <Switch  className="cursor-pointer" />
+                      <Switch className="cursor-pointer" />
                     </div>
                   </div>
                   <Separator />
@@ -137,7 +137,7 @@ const Settings = () => {
                       </p>
                     </div>
                     <div>
-                      <Switch  className="cursor-pointer" />
+                      <Switch className="cursor-pointer" />
                     </div>
                   </div>
                 </div>
@@ -200,7 +200,7 @@ const Settings = () => {
                     <h2>All posts need manual review</h2>
                   </p>
                   <p>
-                    <Switch  className="cursor-pointer" />
+                    <Switch className="cursor-pointer" />
                   </p>
                 </div>
                 <div className="flex items-center justify-between">
@@ -209,7 +209,7 @@ const Settings = () => {
                     <h2>Users can post without accounts</h2>
                   </p>
                   <p>
-                    <Switch  className="cursor-pointer" />
+                    <Switch className="cursor-pointer" />
                   </p>
                 </div>
               </div>
@@ -219,7 +219,7 @@ const Settings = () => {
 
         {/* Data Management */}
         <div>
-          <Card>
+          <Card className="rounded-sm shadow-none">
             <CardHeader>
               <CardTitle>
                 <h1 className="flex items-center gap-2">
@@ -249,7 +249,27 @@ const Settings = () => {
                   <Trash2 /> Clear cache
                 </Button>
               </div>
+              <p>
+                Export user data, backup configurations, or clear system cache
+              </p>
             </CardContent>
+          </Card>
+        </div>
+
+        {/* Save Settings section */}
+        <div>
+          <Card className="rounded-sm shadow-none">
+            <CardHeader>
+              <CardTitle>
+                <div className="flex items-center justify-between w-full">
+                  <p>Changes will be applied to the admin panel immediately</p>
+                  <Button variant="outline" className="flex items-center gap-2">
+                    <Save />
+                    Save Settings
+                  </Button>
+                </div>
+              </CardTitle>
+            </CardHeader>
           </Card>
         </div>
       </div>

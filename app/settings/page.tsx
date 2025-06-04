@@ -18,7 +18,14 @@ import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import { choose_colors } from "@/data/settings";
-import { Bell, Palette, Shield } from "lucide-react";
+import {
+  Bell,
+  Palette,
+  Save,
+  SettingsIcon,
+  Shield,
+  Trash2,
+} from "lucide-react";
 import React from "react";
 
 const Settings = () => {
@@ -105,7 +112,7 @@ const Settings = () => {
                       <p>Receive email alerts for new posts</p>
                     </div>
                     <div>
-                      <Switch />
+                      <Switch  className="cursor-pointer"/>
                     </div>
                   </div>
                   <Separator />
@@ -116,7 +123,7 @@ const Settings = () => {
                       <p>Browser push notifications</p>
                     </div>
                     <div>
-                      <Switch />
+                      <Switch  className="cursor-pointer" />
                     </div>
                   </div>
                   <Separator />
@@ -130,7 +137,7 @@ const Settings = () => {
                       </p>
                     </div>
                     <div>
-                      <Switch />
+                      <Switch  className="cursor-pointer" />
                     </div>
                   </div>
                 </div>
@@ -193,7 +200,7 @@ const Settings = () => {
                     <h2>All posts need manual review</h2>
                   </p>
                   <p>
-                    <Switch />
+                    <Switch  className="cursor-pointer" />
                   </p>
                 </div>
                 <div className="flex items-center justify-between">
@@ -202,11 +209,47 @@ const Settings = () => {
                     <h2>Users can post without accounts</h2>
                   </p>
                   <p>
-                    <Switch />
+                    <Switch  className="cursor-pointer" />
                   </p>
                 </div>
               </div>
             </CardFooter>
+          </Card>
+        </div>
+
+        {/* Data Management */}
+        <div>
+          <Card>
+            <CardHeader>
+              <CardTitle>
+                <h1 className="flex items-center gap-2">
+                  <SettingsIcon />
+                  Data Management
+                </h1>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center gap-4">
+                <Button
+                  className="flex items-center gap-2 cursor-pointer"
+                  variant="outline"
+                >
+                  <Save /> Export Data
+                </Button>
+                <Button
+                  className="flex items-center gap-2 cursor-pointer"
+                  variant="outline"
+                >
+                  <Save /> Backup settings
+                </Button>
+                <Button
+                  className="flex items-center gap-2 cursor-pointer"
+                  variant="destructive"
+                >
+                  <Trash2 /> Clear cache
+                </Button>
+              </div>
+            </CardContent>
           </Card>
         </div>
       </div>

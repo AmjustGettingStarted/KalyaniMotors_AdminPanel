@@ -100,14 +100,14 @@ const Posts = () => {
       </div>
 
       {/* Filter component */}
-      <div className="p-0 md:p-4 md:border md:border-gray-300 rounded-md">
-        <div className="flex flex-col space-y-3">
+      <div className="md:px-4 py-2 md:border md:border-gray-300 rounded-md">
+        <div className="flex flex-col space-y-2">
           <div className="flex-col md:flex-row md:flex w-full">
             <div className="w-full md:w-1/2 flex items-center space-x-2 ">
               <Search size={18} className="text-slate-400" />
               <Input
                 placeholder="Search by username, content, or post ID ..."
-                className="my-2 h-10 placeholder:text-base truncate"
+                className="my-2 h-10 placeholder:text-sm truncate "
               />
             </div>
             <div className="flex w-full md:w-1/2 md:pl-4 space-x-2">
@@ -124,7 +124,7 @@ const Posts = () => {
           <div className="hidden md:block">
             <p className="flex items-center space-x-2">
               <Checkbox className="mr-2 border-black cursor-pointer" />
-              <Label className="text-base font-normal text-slate-600">
+              <Label className="text-sm font-normal text-slate-600">
                 Select all
               </Label>
             </p>

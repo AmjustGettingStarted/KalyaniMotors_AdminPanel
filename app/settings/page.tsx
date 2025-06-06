@@ -170,12 +170,12 @@ const Settings = () => {
           <Card className="rounded-sm shadow-none">
             <CardHeader>
               <CardTitle>
-                <p className="flex gap-2 items-center">
+                <h1 className="flex gap-2 items-center">
                   <Shield size={18} />
                   <p className="text-base sm:text-lg font-medium tracking-tight">
                     Moderations Rules
                   </p>
-                </p>
+                </h1>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -233,7 +233,10 @@ const Settings = () => {
                     </p>
                   </p>
                   <p>
-                    <Switch className="cursor-pointer scale-125" defaultChecked />
+                    <Switch
+                      className="cursor-pointer scale-125"
+                      defaultChecked
+                    />
                   </p>
                 </div>
                 <div className="flex items-center justify-between">
@@ -259,26 +262,28 @@ const Settings = () => {
               <CardTitle>
                 <h1 className="flex items-center gap-2">
                   <SettingsIcon size={18} />
-                  <p className="text-lg font-semibold">Data Management</p>
+                  <p className="text-sm sm:text-lg font-semibold">
+                    Data Management
+                  </p>
                 </h1>
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
                 <Button
-                  className="flex items-center gap-2 cursor-pointer"
+                  className="flex w-full sm:w-auto items-center gap-2 cursor-pointer"
                   variant="outline"
                 >
                   <Save /> Export Data
                 </Button>
                 <Button
-                  className="flex items-center gap-2 cursor-pointer"
+                  className="flex w-full sm:w-auto items-center gap-2 cursor-pointer"
                   variant="outline"
                 >
                   <Save /> Backup settings
                 </Button>
                 <Button
-                  className="flex items-center gap-2 cursor-pointer border-red-300 text-red-600 hover:bg-red-50 text-sm"
+                  className="flex w-full sm:w-auto items-center gap-2 cursor-pointer border-red-300 text-red-600 hover:bg-red-50 text-sm"
                   variant="outline"
                 >
                   <Trash2 /> Clear cache

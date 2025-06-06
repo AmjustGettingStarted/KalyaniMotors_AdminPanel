@@ -30,7 +30,7 @@ import React from "react";
 
 const Settings = () => {
   return (
-    <div className="p-6 ">
+    <div className="p-3 sm:p-6 ">
       <div className="space-y-4 sm:space-y-6 flex flex-col">
         {/* Top Header */}
         <div>
@@ -49,7 +49,7 @@ const Settings = () => {
             <Card className="rounded-sm shadow-xs">
               <CardHeader>
                 <CardTitle>
-                  <p className="flex gap-2 text-xl font-medium items-center">
+                  <p className="flex gap-2 textbase sm:text-xl font-semibold items-center">
                     <Palette /> Appearance
                   </p>
                 </CardTitle>
@@ -57,7 +57,7 @@ const Settings = () => {
               <CardContent className="flex flex-col gap-4">
                 {/* Select theme */}
                 <div className="flex flex-col gap-2">
-                  <h1 className="text-lg"> Theme</h1>
+                  <h1 className="text-sm sm:text-lg"> Theme</h1>
                   <Select>
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Light" />
@@ -71,21 +71,21 @@ const Settings = () => {
                 </div>
                 {/* Select Color */}
                 <div className="flex flex-col gap-2">
-                  <h1 className="text-lg font-normal tracking-tight">
+                  <h1 className="text-sm sm:text-lg font-normal tracking-tight">
                     Primary Color
                   </h1>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                     {choose_colors.map((colors, i) => (
                       <Button
                         variant="outline"
-                        className=" rounded-sm w-full shadow-none h-12 cursor-pointer"
+                        className=" rounded-sm w-full shadow-none sm:h-12 cursor-pointer "
                         key={i}
                       >
-                        <div className="flex items-center gap-2 justify-start w-full h-8">
+                        <div className="flex items-center gap-2 justify-start w-full">
                           <p
-                            className={`min-w-4 min-h-4 rounded-full ${colors.bg} `}
+                            className={`min-w-3 min-h-3 rounded-full ${colors.bg} `}
                           ></p>
-                          <p className="text-base font-normal">
+                          <p className="text-sm sm:text-base font-normal">
                             {colors.color}
                           </p>
                         </div>
@@ -119,7 +119,7 @@ const Settings = () => {
                     </div>
                     <div>
                       <Switch
-                        className="cursor-pointer scale-150"
+                        className="cursor-pointer scale-125"
                         defaultChecked
                       />
                     </div>
@@ -134,7 +134,7 @@ const Settings = () => {
                       </p>
                     </div>
                     <div>
-                      <Switch className="cursor-pointer scale-150" />
+                      <Switch className="cursor-pointer scale-125" />
                     </div>
                   </div>
                   <Separator />

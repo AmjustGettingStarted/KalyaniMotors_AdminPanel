@@ -10,13 +10,11 @@ import AllUsers from "./_components/all-users";
 const Users = () => {
   return (
     <div className="p-4 sm:p-6">
-      <div className="space-y-4 sm:space-y-8 flex flex-col">
+      <div className="space-y-4 sm:space-y-6 flex flex-col">
         {/* Top Header */}
         <div>
-          <h1 className="text-xl sm:text-4xl tracking-tight font-semibold">
-            User Management
-          </h1>
-          <h3 className="text-sm sm:text-lg font-normal text-slate-600 pt-2">
+          <h1 className="text-lg sm:text-3xl font-semibold">User Management</h1>
+          <h3 className="text-sm sm:text-base font-normal text-slate-600 pt-2">
             Manage user accounts and monitor activity
           </h3>
         </div>
@@ -27,7 +25,7 @@ const Users = () => {
             <Card key={i} className="rounded-sm shadow-xs">
               <CardContent className="space-y-2">
                 <div className="flex justify-between items-center">
-                  <p>{item.lable}</p>
+                  <p className="text-sm">{item.lable}</p>
                   <p
                     className={`${
                       item.lable === "Active Users"
@@ -57,13 +55,13 @@ const Users = () => {
         </div>
 
         {/* Filter component */}
-        <div className="p-0 md:p-4 md:border md:border-gray-300 rounded-md">
+        <div className="md:px-4 md:py-2 md:border md:border-gray-300 rounded-md">
           <div className="flex-col md:flex-row md:flex w-full">
             <div className="w-full md:w-1/2 flex items-center space-x-2 ">
               <Search size={18} className="text-slate-400" />
               <Input
                 placeholder="Search by username, email, or user ID..."
-                className="my-2 h-10 placeholder:text-base truncate"
+                className="my-2 h-10 text-sm placeholder:text-sm truncate"
               />
             </div>
             <div className="flex w-full md:w-1/2 md:pl-4 space-x-2">

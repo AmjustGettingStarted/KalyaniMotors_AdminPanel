@@ -101,8 +101,8 @@ const Settings = () => {
             <Card className="rounded-sm shadow-xs">
               <CardHeader>
                 <CardTitle>
-                  <p className="flex gap-2 items-center text-xl font-semibold">
-                    <Bell />
+                  <p className="flex gap-2 items-center text-base sm:text-xl font-semibold">
+                    <Bell size={18} />
                     Notifications
                   </p>
                 </CardTitle>
@@ -112,8 +112,8 @@ const Settings = () => {
                   {/* Email Notfication */}
                   <div className="flex justify-between items-center">
                     <div className="flex flex-col">
-                      <p className="text-lg font-medium">Email Notfications</p>
-                      <p className="text-sm text-slate-600">
+                      <p className="text-sm sm:text-lg font-medium">Email Notfications</p>
+                      <p className="text-xs sm:text-sm text-slate-600">
                         Receive email alerts for new posts
                       </p>
                     </div>
@@ -128,8 +128,8 @@ const Settings = () => {
                   {/* Push Notfication */}
                   <div className="flex justify-between items-center">
                     <div className="flex flex-col">
-                      <p className="text-lg font-medium">Push Notfications</p>
-                      <p className="text-sm text-slate-600">
+                      <p className="text-sm sm:text-lg font-medium">Push Notfications</p>
+                      <p className="text-xs sm:text-sm text-slate-600">
                         Browser push notifications
                       </p>
                     </div>
@@ -141,8 +141,8 @@ const Settings = () => {
                   {/* Moderation Notfication */}
                   <div className="flex justify-between items-center">
                     <div className="flex flex-col">
-                      <p className="text-lg font-medium">Moderation Alerts</p>
-                      <p className="text-sm text-slate-600">
+                      <p className="text-sm sm:text-lg font-medium">Moderation Alerts</p>
+                      <p className="text-xs sm:text-sm text-slate-600">
                         Urgent moderation notifications
                       </p>
                     </div>

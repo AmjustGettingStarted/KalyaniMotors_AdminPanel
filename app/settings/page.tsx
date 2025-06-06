@@ -285,10 +285,12 @@ const Settings = () => {
             <CardHeader>
               <CardTitle>
                 <div className="flex items-center justify-between w-full">
-                  <p>Changes will be applied to the admin panel immediately</p>
+                  <p className="text-sm text-slate-500">
+                    Changes will be applied to the admin panel immediately
+                  </p>
                   <Button
                     variant="outline"
-                    className="flex items-center gap-2 cursor-pointer"
+                    className="flex items-center gap-2 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white"
                   >
                     <Save />
                     Save Settings

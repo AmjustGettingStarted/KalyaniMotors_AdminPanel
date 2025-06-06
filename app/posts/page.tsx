@@ -28,6 +28,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import Link from "next/link";
 
 const Posts = () => {
   // Function to determine the css of the posts data
@@ -149,7 +150,7 @@ const Posts = () => {
                       </AvatarFallback>
                     </Avatar>
                     <div className="flex flex-col leading-loose">
-                      <p className="text-sm md:text-lg">@{post.user}</p>
+                      <p className="text-sm md:text-base">@{post.user}</p>
                       <p className="text-xs md:text-sm text-slate-500 font-normal line-clamp-1 ">
                         about {post.time} ago
                       </p>
@@ -177,14 +178,19 @@ const Posts = () => {
                       {post.status}
                     </p>
                     <p>
-                      <ExternalLinkIcon size={18} className="cursor-pointer" />
+                      <Link href={`/posts/${post.user}`}>
+                        <ExternalLinkIcon
+                          size={18}
+                          className="cursor-pointer"
+                        />
+                      </Link>
                     </p>
                   </div>
                 </CardAction>
               </CardHeader>
               <CardContent>
                 <div className="flex-col space-y-4">
-                  <p className="md:text-lg leading-relaxed line-clamp-3 text-slate-700 text-sm">
+                  <p className="md:text-base leading-relaxed line-clamp-3 text-slate-700 text-sm">
                     {post.postTitle}
                   </p>
                   <div>
@@ -208,14 +214,12 @@ const Posts = () => {
                           <div>
                             <Button
                               variant="ghost"
-                              className="text-blue-600 hover:text-blue-700 text-xs md:text-sm px-3 hover:bg-accent cursor-pointer"
+                              className="text-blue-600 hover:text-blue-700 text-xs px-3 hover:bg-accent cursor-pointer"
                             >
                               View All
                             </Button>
                           </div>
                         </CardTitle>
-                        {/* <CardAction className="flex items-center">
-                        </CardAction> */}
                       </CardHeader>
                       <CardContent>
                         <div className="grid grid-cols-3 gap-4 ">
@@ -246,13 +250,13 @@ const Posts = () => {
               <CardFooter className="flex w-full gap-2">
                 <Button
                   variant="outline"
-                  className="flex h-10  items-center w-1/2 bg-green-600 hover:bg-green-700  text-white hover:text-white rounded-sm  cursor-pointer text-base"
+                  className="flex h-10  items-center w-1/2 bg-green-600 hover:bg-green-700  text-white hover:text-white rounded-sm  cursor-pointer text-sm"
                 >
                   <CheckCircle /> Approve
                 </Button>
                 <Button
                   variant="destructive"
-                  className="flex h-10 items-center w-1/2 rounded-sm  cursor-pointer text-base hover:bg-red-700"
+                  className="flex h-10 items-center w-1/2 rounded-sm  cursor-pointer text-sm text-white hover:text-white hover:bg-red-700"
                 >
                   <CircleX />
                   Reject

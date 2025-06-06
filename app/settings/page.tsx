@@ -301,13 +301,13 @@ const Settings = () => {
           <Card className="rounded-sm shadow-none">
             <CardHeader>
               <CardTitle>
-                <div className="flex items-center justify-between w-full">
-                  <p className="text-sm text-slate-500">
+                <div className="flex flex-col sm:flex-row items-center justify-between w-full space-y-2">
+                  <p className="text-xs sm:text-sm whitespace-nowrap  text-slate-500">
                     Changes will be applied to the admin panel immediately
                   </p>
                   <Button
                     variant="outline"
-                    className="flex items-center gap-2 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white"
+                    className="flex h-10 w-full sm:w-auto hover:text-white  items-center gap-2 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white"
                   >
                     <Save />
                     Save Settings

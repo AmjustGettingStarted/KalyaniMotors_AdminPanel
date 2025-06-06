@@ -15,6 +15,7 @@ import {
   CircleX,
   Clock,
   ExternalLinkIcon,
+  Phone,
   Shield,
   Sidebar,
 } from "lucide-react";
@@ -68,10 +69,23 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
                     <AvatarImage src="https://images.pexels.com/photos/4565706/pexels-photo-4565706.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
                   </Avatar>
                   <div className="flex flex-col leading-loose">
-                    <p className="text-sm md:text-base">@{params.id}</p>
-                    <p className="text-xs md:text-sm text-slate-500 font-normal line-clamp-1 ">
-                      about 1 year ago
-                    </p>
+                    <div className="flex items-center gap-2">
+                      <p className="text-base md:text-2xl ">{params.id}</p>
+                      <Shield size={15} className="text-blue-600" />
+                    </div>
+                    <div className="flex space-x-4 text-xs sm:text-sm  text-slate-500 font-medium">
+                      <p className=" line-clamp-1 ">about 1 year ago</p>
+                      <p>•</p>
+                      <p>Post ID: 1</p>
+                      <p>•</p>
+                      <p>Night Sky</p>
+                    </div>
+                    <div className="flex items-center text-xs text-slate-400 space-x-2">
+                      <Phone size={12} />
+                      <p>775677477</p>
+                      <p>•</p>
+                      <p>Members</p>
+                    </div>
                   </div>
                 </div>
               </CardTitle>
@@ -84,8 +98,8 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
                     Pending
                   </p>
                   <p>
-                    <Button variant="outline">
-                      <ExternalLinkIcon size={18} className="cursor-pointer" />
+                    <Button variant="outline" className="cursor-pointer">
+                      <ExternalLinkIcon size={18} />
                       View Profile
                     </Button>
                   </p>

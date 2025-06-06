@@ -1,21 +1,32 @@
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
   Card,
+  CardAction,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import {
   ArrowLeft,
   CircleCheckBig,
   CircleX,
+  Clock,
+  ExternalLinkIcon,
   Shield,
   Sidebar,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
+const reach = [
+  { count: 24, label: "Likes" },
+  { count: 12, label: "Comments" },
+  { count: 3, label: "Shares" },
+];
 
 const PostDetail = ({ params }: { params: { id: string } }) => {
   console.log(params.id);
@@ -51,7 +62,35 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
         <div>
           <Card className="rounded-sm">
             <CardHeader>
-              <CardTitle>Title</CardTitle>
+              <CardTitle>
+                <div className="flex items-center space-x-2 md:space-x-4">
+                  <Avatar className="size-12">
+                    <AvatarImage src="https://images.pexels.com/photos/4565706/pexels-photo-4565706.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+                  </Avatar>
+                  <div className="flex flex-col leading-loose">
+                    <p className="text-sm md:text-base">@{params.id}</p>
+                    <p className="text-xs md:text-sm text-slate-500 font-normal line-clamp-1 ">
+                      about 1 year ago
+                    </p>
+                  </div>
+                </div>
+              </CardTitle>
+              <CardAction>
+                <div className="flex items-center space-x-4">
+                  <p
+                    className={`flex items-center gap-2 h-6 rounded-full  px-2 text-xs capitalize font-medium bg-amber-100 text-amber-800 `}
+                  >
+                    <Clock size={12} />
+                    Pending
+                  </p>
+                  <p>
+                    <Button variant="outline">
+                      <ExternalLinkIcon size={18} className="cursor-pointer" />
+                      View Profile
+                    </Button>
+                  </p>
+                </div>
+              </CardAction>
             </CardHeader>
             <CardContent className="space-y-4 flex flex-col">
               <h1>Post Content</h1>
@@ -75,6 +114,14 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
                   className="w-full h-[50vh] object-cover"
                 />
               </div>
+              <Card className="grid grid-cols-3 bg-slate-50 py-4 rounded-sm border-none shadow-none">
+                {reach.map((item, i) => (
+                  <div key={i} className="flex flex-col space-y-1 items-center">
+                    <p className="text-slate-900 font-medium">{item.count}</p>
+                    <p className="text-sm text-slate-600">{item.label}</p>
+                  </div>
+                ))}
+              </Card>
             </CardContent>
             <CardFooter className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <Button
@@ -94,6 +141,7 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
             </CardFooter>
           </Card>
         </div>
+        <Separator />
       </div>
     </div>
   );

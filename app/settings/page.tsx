@@ -31,7 +31,7 @@ import React from "react";
 const Settings = () => {
   return (
     <div className="p-6 ">
-      <div className="space-y-4 sm:space-y-8 flex flex-col">
+      <div className="space-y-4 sm:space-y-6 flex flex-col">
         {/* Top Header */}
         <div>
           <h1 className="text-3xl tracking-tight font-semibold">
@@ -246,13 +246,13 @@ const Settings = () => {
             <CardHeader>
               <CardTitle>
                 <h1 className="flex items-center gap-2">
-                  <SettingsIcon />
-                  Data Management
+                  <SettingsIcon size={18} />
+                  <p className="text-lg font-semibold">Data Management</p>
                 </h1>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex items-center gap-4">
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
                 <Button
                   className="flex items-center gap-2 cursor-pointer"
                   variant="outline"
@@ -266,13 +266,13 @@ const Settings = () => {
                   <Save /> Backup settings
                 </Button>
                 <Button
-                  className="flex items-center gap-2 cursor-pointer"
-                  variant="destructive"
+                  className="flex items-center gap-2 cursor-pointer border-red-300 text-red-600 hover:bg-red-50 text-sm"
+                  variant="outline"
                 >
                   <Trash2 /> Clear cache
                 </Button>
               </div>
-              <p>
+              <p className=" text-xs text-slate-500 mt-4">
                 Export user data, backup configurations, or clear system cache
               </p>
             </CardContent>

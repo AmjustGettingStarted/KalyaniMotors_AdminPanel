@@ -43,9 +43,9 @@ const Settings = () => {
         </div>
 
         {/* Appearance & Notfication */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Appearance */}
-          <div>
+          <div className="">
             <Card className="rounded-sm shadow-xs">
               <CardHeader>
                 <CardTitle>
@@ -74,7 +74,7 @@ const Settings = () => {
                   <h1 className="text-lg font-normal tracking-tight">
                     Primary Color
                   </h1>
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                     {choose_colors.map((colors, i) => (
                       <Button
                         variant="outline"
@@ -83,7 +83,7 @@ const Settings = () => {
                       >
                         <div className="flex items-center gap-2 justify-start w-full h-8">
                           <p
-                            className={`w-5 h-5 rounded-full ${colors.bg} `}
+                            className={`min-w-4 min-h-4 rounded-full ${colors.bg} `}
                           ></p>
                           <p className="text-base font-normal">
                             {colors.color}
@@ -97,7 +97,7 @@ const Settings = () => {
             </Card>
           </div>
           {/* Notifications */}
-          <div>
+          <div className="">
             <Card className="rounded-sm shadow-xs">
               <CardHeader>
                 <CardTitle>
@@ -118,7 +118,10 @@ const Settings = () => {
                       </p>
                     </div>
                     <div>
-                      <Switch className="cursor-pointer scale-150" defaultChecked />
+                      <Switch
+                        className="cursor-pointer scale-150"
+                        defaultChecked
+                      />
                     </div>
                   </div>
                   <Separator />
@@ -144,7 +147,10 @@ const Settings = () => {
                       </p>
                     </div>
                     <div>
-                      <Switch className="cursor-pointer scale-125" defaultChecked />
+                      <Switch
+                        className="cursor-pointer scale-125"
+                        defaultChecked
+                      />
                     </div>
                   </div>
                 </div>

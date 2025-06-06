@@ -60,34 +60,38 @@ const Posts = () => {
       {/* Top Header */}
       <div className="border-b border-gray-300 p-2 md:p-4 flex">
         <div className="cursor-pointer">
-          <Sidebar size={20} className="m-2" />
+          <Sidebar size={18} className="m-2" />
         </div>
         <div className=" flex items-center">
           <div className="border-l border-gray-300 h-6 ml-2 hidden md:block"></div>
           <div className="flex items-center justify-center w-6 h-6 bg-blue-600 mx-2 ">
             <Shield size={13} color="#fff" />
           </div>
-          <p>Posts & Comments Management</p>
+          <p className="font-semibold text-slate-900">
+            Posts & Comments Management
+          </p>
         </div>
       </div>
 
       {/* Posts Details Cards */}
       <div className="py-6">
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {posts_data.map((post, i) => (
-            <Card key={i} className={getCss(post.heading)}>
+            <Card key={i} className={`rounded-sm ${getCss(post.heading)}`}>
               <CardContent>
-                <div className="flex-col">
+                <div className="flex-col space-y-2">
                   <div className="w-full flex justify-between items-center">
-                    <p className="font-medium text-xs md:text-base tracking-tight line-clamp-1">
+                    <p className="font-medium text-xs md:text-sm tracking-tight line-clamp-1">
                       {post.heading}
                     </p>
                     <p>
-                      <post.icon size={18} />
+                      <post.icon size={16} />
                     </p>
                   </div>
-                  <p className="text-2xl font-bold mt-2">{post.count}</p>
-                  <p className="text-xs my-2">{post.subhead}</p>
+                  <div className="flex flex-col space-y-1">
+                    <p className="text-2xl font-bold">{post.count}</p>
+                    <p className="text-xs ">{post.subhead}</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>

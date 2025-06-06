@@ -13,10 +13,13 @@ import {
   Shield,
   Sidebar,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const PostDetail = ({ params }: { params: { id: string } }) => {
+  console.log(params.id);
+
   return (
     <div className="p-4 md:p-6">
       {/* Top Header */}
@@ -46,11 +49,33 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
           </Link>
         </div>
         <div>
-          <Card className="h-screen rounded-sm">
+          <Card className="rounded-sm">
             <CardHeader>
               <CardTitle>Title</CardTitle>
             </CardHeader>
-            <CardContent>Content</CardContent>
+            <CardContent className="space-y-4 flex flex-col">
+              <h1>Post Content</h1>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse
+                tempore accusantium quod officiis optio exercitationem laborum
+                corrupti facilis. Libero consequatur, ipsum sapiente nulla iusto
+                vero vitae similique illo ab consectetur? Perferendis inventore
+                aliquid quisquam ducimus recusandae impedit minus rem
+                praesentium, in, dolorem a fugiat error officiis cum hic
+                consectetur laboriosam debitis. Labore ullam facilis magni
+                quaerat pariatur quis expedita esse!
+              </p>
+              <div className="flex flex-col w-full space-y-2">
+                <h1>Media</h1>
+                <Image
+                  src="https://images.pexels.com/photos/4021367/pexels-photo-4021367.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                  alt={params.id}
+                  width={1920}
+                  height={1080}
+                  className="w-full h-[50vh] object-cover"
+                />
+              </div>
+            </CardContent>
             <CardFooter className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <Button
                 className="w-full h-10 rounded-sm text-white hover:text-white bg-green-600 hover:bg-green-700"

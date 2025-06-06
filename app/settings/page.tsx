@@ -168,7 +168,7 @@ const Settings = () => {
               <div className="grid grid-cols-2 gap-4">
                 {/* Threshold */}
                 <div className="flex flex-col space-y-2">
-                  <p className="text-lg">Auto-approve Threshold</p>
+                  <p className="">Auto-approve Threshold</p>
                   <p>
                     <Select>
                       <SelectTrigger className="w-full cursor-pointer">
@@ -182,15 +182,19 @@ const Settings = () => {
                       </SelectContent>
                     </Select>
                   </p>
-                  <p>Automatically approve posts from trusted users</p>
+                  <p className="text-xs text-slate-500">
+                    Automatically approve posts from trusted users
+                  </p>
                 </div>
                 {/*  Max Uploads */}
-                <div className="flex flex-col ">
+                <div className="flex flex-col space-y-2 ">
                   <p>Max Post Length</p>
                   <p>
                     <Input type="number" defaultValue={500} />
                   </p>
-                  <p>Maximum characters allowed per post</p>
+                  <p className="text-xs text-slate-500">
+                    Maximum characters allowed per post
+                  </p>
                 </div>
               </div>
               <div className="flex flex-col">

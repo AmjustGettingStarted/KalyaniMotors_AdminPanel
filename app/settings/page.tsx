@@ -160,12 +160,14 @@ const Settings = () => {
               <CardTitle>
                 <p className="flex gap-2 items-center font-semibold text-xl">
                   <Shield />
-                  <h1 className="text-lg">Moderations Rules</h1>
+                  <h1 className="text-lg font-semibold tracking-tight">
+                    Moderations Rules
+                  </h1>
                 </p>
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-2 gap-4">
+            <CardContent className="space-y-6">
+              <div className="grid grid-cols-2 gap-6">
                 {/* Threshold */}
                 <div className="flex flex-col space-y-2">
                   <p className="">Auto-approve Threshold</p>
@@ -197,30 +199,40 @@ const Settings = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col space-y-2">
                 <h1>Blocked Keywords</h1>
-                <Textarea defaultValue="spam offensive" />
-                <p>Posts containing these keywords will be auto-flagged</p>
+                <Textarea
+                  defaultValue="spam offensive"
+                  rows={6}
+                  className="h-32 rounded-sm"
+                />
+                <p className="text-xs text-slate-500">
+                  Posts containing these keywords will be auto-flagged
+                </p>
               </div>
             </CardContent>
             <CardFooter>
-              <div className="grid grid-cols-2 gap-4 w-full">
+              <div className="grid grid-cols-2 gap-6 w-full">
                 <div className="flex items-center justify-between">
                   <p>
-                    <h1>Require Manual Approval</h1>
-                    <h2>All posts need manual review</h2>
+                    <h1 className="font-medium">Require Manual Approval</h1>
+                    <h2 className="text-xs text-slate-500">
+                      All posts need manual review
+                    </h2>
                   </p>
                   <p>
-                    <Switch className="cursor-pointer" />
+                    <Switch className="cursor-pointer scale-125" />
                   </p>
                 </div>
                 <div className="flex items-center justify-between">
                   <p>
-                    <h1>Allow Anonymous Posts</h1>
-                    <h2>Users can post without accounts</h2>
+                    <h1 className="font-medium">Allow Anonymous Posts</h1>
+                    <h2 className="text-xs text-slate-500">
+                      Users can post without accounts
+                    </h2>
                   </p>
                   <p>
-                    <Switch className="cursor-pointer" />
+                    <Switch className="cursor-pointer scale-125" />
                   </p>
                 </div>
               </div>

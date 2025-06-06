@@ -1,4 +1,6 @@
-import { Shield, Sidebar } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Shield, Sidebar } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 const PostDetail = ({ params }: { params: { id: string } }) => {
@@ -18,8 +20,15 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
         </div>
       </div>
 
-      <div className="space-y-4">
-        
+      <div className="space-y-6">
+        <div className="pt-6">
+          <Link href="/posts">
+          <Button className="" variant="outline">
+            <ArrowLeft />
+            Back to Posts
+          </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ const Settings = () => {
       <div className="space-y-4 sm:space-y-8 flex flex-col">
         {/* Top Header */}
         <div>
-          <h1 className="text-xl sm:text-4xl tracking-tight font-semibold">
+          <h1 className="text-3xl tracking-tight font-semibold">
             Admin Settings
           </h1>
           <h3 className="text-sm sm:text-lg font-normal text-slate-600 pt-2">
@@ -126,7 +126,9 @@ const Settings = () => {
                   <div className="flex justify-between items-center">
                     <div className="flex flex-col">
                       <p className="text-lg font-medium">Push Notfications</p>
-                      <p className="text-sm text-slate-600">Browser push notifications</p>
+                      <p className="text-sm text-slate-600">
+                        Browser push notifications
+                      </p>
                     </div>
                     <div>
                       <Switch className="cursor-pointer" />
@@ -138,8 +140,7 @@ const Settings = () => {
                     <div className="flex flex-col">
                       <p className="text-lg font-medium">Moderation Alerts</p>
                       <p className="text-sm text-slate-600">
-                        Urgent moderation
-                        notifications
+                        Urgent moderation notifications
                       </p>
                     </div>
                     <div>
@@ -157,7 +158,7 @@ const Settings = () => {
           <Card className="rounded-sm shadow-none">
             <CardHeader>
               <CardTitle>
-                <p className="flex gap-2 items-center">
+                <p className="flex gap-2 items-center font-semibold text-xl">
                   <Shield />
                   <h1 className="text-lg">Moderations Rules</h1>
                 </p>
@@ -166,8 +167,8 @@ const Settings = () => {
             <CardContent>
               <div className="grid grid-cols-2 gap-4">
                 {/* Threshold */}
-                <div className="flex flex-col">
-                  <p>Auto-approve Threshold</p>
+                <div className="flex flex-col space-y-2">
+                  <p className="text-lg">Auto-approve Threshold</p>
                   <p>
                     <Select>
                       <SelectTrigger className="w-full cursor-pointer">

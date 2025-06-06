@@ -11,7 +11,7 @@ export const sidebar_routes = [
 
 const Sidebar = () => {
   return (
-    <div className=" w-71 h-full bg-[#FAFAFA] fixed left-0 top-0 border-r border-gray-300">
+    <div className=" w-64 h-full bg-[#FAFAFA] fixed left-0 top-0 border-r border-gray-300">
       <div className="h-full">
         <div className="flex flex-col justify-between h-full ">
           {/* Top Content */}

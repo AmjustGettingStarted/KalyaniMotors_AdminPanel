@@ -112,7 +112,9 @@ const Settings = () => {
                   {/* Email Notfication */}
                   <div className="flex justify-between items-center">
                     <div className="flex flex-col">
-                      <p className="text-sm sm:text-lg font-medium">Email Notfications</p>
+                      <p className="text-sm sm:text-lg font-medium">
+                        Email Notfications
+                      </p>
                       <p className="text-xs sm:text-sm text-slate-600">
                         Receive email alerts for new posts
                       </p>
@@ -128,7 +130,9 @@ const Settings = () => {
                   {/* Push Notfication */}
                   <div className="flex justify-between items-center">
                     <div className="flex flex-col">
-                      <p className="text-sm sm:text-lg font-medium">Push Notfications</p>
+                      <p className="text-sm sm:text-lg font-medium">
+                        Push Notfications
+                      </p>
                       <p className="text-xs sm:text-sm text-slate-600">
                         Browser push notifications
                       </p>
@@ -141,7 +145,9 @@ const Settings = () => {
                   {/* Moderation Notfication */}
                   <div className="flex justify-between items-center">
                     <div className="flex flex-col">
-                      <p className="text-sm sm:text-lg font-medium">Moderation Alerts</p>
+                      <p className="text-sm sm:text-lg font-medium">
+                        Moderation Alerts
+                      </p>
                       <p className="text-xs sm:text-sm text-slate-600">
                         Urgent moderation notifications
                       </p>
@@ -164,19 +170,19 @@ const Settings = () => {
           <Card className="rounded-sm shadow-none">
             <CardHeader>
               <CardTitle>
-                <p className="flex gap-2 items-center font-semibold text-xl">
-                  <Shield />
-                  <p className="text-lg font-semibold tracking-tight">
+                <p className="flex gap-2 items-center">
+                  <Shield size={18} />
+                  <p className="text-base sm:text-lg font-medium tracking-tight">
                     Moderations Rules
                   </p>
                 </p>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid sm:grid-cols-2 gap-6">
                 {/* Threshold */}
                 <div className="flex flex-col space-y-2">
-                  <p className="">Auto-approve Threshold</p>
+                  <p className="text-sm sm:text-base">Auto-approve Threshold</p>
                   <p>
                     <Select>
                       <SelectTrigger className="w-full cursor-pointer">
@@ -196,7 +202,7 @@ const Settings = () => {
                 </div>
                 {/*  Max Uploads */}
                 <div className="flex flex-col space-y-2 ">
-                  <p>Max Post Length</p>
+                  <p className="text-sm sm:text-base">Max Post Length</p>
                   <p>
                     <Input type="number" defaultValue={500} />
                   </p>
@@ -206,11 +212,11 @@ const Settings = () => {
                 </div>
               </div>
               <div className="flex flex-col space-y-2">
-                <h1>Blocked Keywords</h1>
+                <h1 className="text-sm sm:text-base">Blocked Keywords</h1>
                 <Textarea
                   defaultValue="spam offensive"
                   rows={6}
-                  className="h-32 rounded-sm"
+                  className="h-32 rounded-sm text-sm sm:text-base"
                 />
                 <p className="text-xs text-slate-500">
                   Posts containing these keywords will be auto-flagged
@@ -218,7 +224,7 @@ const Settings = () => {
               </div>
             </CardContent>
             <CardFooter>
-              <div className="grid grid-cols-2 gap-6 w-full">
+              <div className="grid sm:grid-cols-2 gap-6 w-full">
                 <div className="flex items-center justify-between">
                   <p>
                     <p className="font-medium">Require Manual Approval</p>
@@ -227,7 +233,7 @@ const Settings = () => {
                     </p>
                   </p>
                   <p>
-                    <Switch className="cursor-pointer scale-125" />
+                    <Switch className="cursor-pointer scale-125" defaultChecked />
                   </p>
                 </div>
                 <div className="flex items-center justify-between">

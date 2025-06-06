@@ -76,7 +76,21 @@ export const filterData: FilterData[] = [
   "Most Comments",
 ];
 
-export const allPostsData = [
+type AllPostProp = {
+  avatar: string;
+  user: string;
+  time: string;
+  status: string;
+  postTitle: string;
+  url: string;
+  commentNo: number;
+  pending: number;
+  approved: number;
+  rejected: number;
+};
+
+
+export const allPostsData:AllPostProp[] = [
   {
     avatar: "",
     user: "user_4",

@@ -118,7 +118,7 @@ const Settings = () => {
                       </p>
                     </div>
                     <div>
-                      <Switch className="cursor-pointer " />
+                      <Switch className="cursor-pointer scale-150" defaultChecked />
                     </div>
                   </div>
                   <Separator />
@@ -131,7 +131,7 @@ const Settings = () => {
                       </p>
                     </div>
                     <div>
-                      <Switch className="cursor-pointer" />
+                      <Switch className="cursor-pointer scale-150" />
                     </div>
                   </div>
                   <Separator />
@@ -144,7 +144,7 @@ const Settings = () => {
                       </p>
                     </div>
                     <div>
-                      <Switch className="cursor-pointer" />
+                      <Switch className="cursor-pointer scale-125" defaultChecked />
                     </div>
                   </div>
                 </div>
@@ -160,9 +160,9 @@ const Settings = () => {
               <CardTitle>
                 <p className="flex gap-2 items-center font-semibold text-xl">
                   <Shield />
-                  <h1 className="text-lg font-semibold tracking-tight">
+                  <p className="text-lg font-semibold tracking-tight">
                     Moderations Rules
-                  </h1>
+                  </p>
                 </p>
               </CardTitle>
             </CardHeader>
@@ -215,10 +215,10 @@ const Settings = () => {
               <div className="grid grid-cols-2 gap-6 w-full">
                 <div className="flex items-center justify-between">
                   <p>
-                    <h1 className="font-medium">Require Manual Approval</h1>
-                    <h2 className="text-xs text-slate-500">
+                    <p className="font-medium">Require Manual Approval</p>
+                    <p className="text-sm text-slate-500">
                       All posts need manual review
-                    </h2>
+                    </p>
                   </p>
                   <p>
                     <Switch className="cursor-pointer scale-125" />
@@ -226,10 +226,10 @@ const Settings = () => {
                 </div>
                 <div className="flex items-center justify-between">
                   <p>
-                    <h1 className="font-medium">Allow Anonymous Posts</h1>
-                    <h2 className="text-xs text-slate-500">
+                    <p className="font-medium">Allow Anonymous Posts</p>
+                    <p className="text-sm text-slate-500">
                       Users can post without accounts
-                    </h2>
+                    </p>
                   </p>
                   <p>
                     <Switch className="cursor-pointer scale-125" />

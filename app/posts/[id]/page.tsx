@@ -156,6 +156,9 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
           </Card>
         </div>
         <Separator />
+        <div>
+          <h1>Coments</h1>
+        </div>
       </div>
     </div>
   );

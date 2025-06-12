@@ -240,12 +240,12 @@ const Settings = () => {
                   </p>
                 </div>
                 <div className="flex items-center justify-between">
-                  <p>
+                  <div>
                     <p className="font-medium">Allow Anonymous Posts</p>
                     <p className="text-sm text-slate-500">
                       Users can post without accounts
                     </p>
-                  </p>
+                  </div>
                   <p>
                     <Switch className="cursor-pointer scale-125" />
                   </p>

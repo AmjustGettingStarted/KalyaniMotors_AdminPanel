@@ -61,7 +61,7 @@ const Posts = () => {
       {/* Top Header */}
       <div className="border-b border-gray-300 p-2 md:p-4 flex">
         <div className="cursor-pointer">
-          <SidebarTrigger size={18} className="m-2" />
+          <SidebarTrigger />
         </div>
         <div className=" flex items-center">
           <div className="border-l border-gray-300 h-6 ml-2 hidden md:block"></div>
@@ -178,7 +178,7 @@ const Posts = () => {
                       {post.status}
                     </p>
                     <p>
-                      <Link href={`/posts/${post.user}`}>
+                      <Link href={`/admin/${post.user}`}>
                         <ExternalLinkIcon
                           size={18}
                           className="cursor-pointer"

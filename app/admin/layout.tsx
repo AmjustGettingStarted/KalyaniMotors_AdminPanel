@@ -21,7 +21,7 @@ export default function RootLayout({
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <body className={`${inter.variable} font-sans`}>{children}</body>
+        <div className={`${inter.variable} font-sans`}>{children}</div>
       </SidebarInset>
     </SidebarProvider>
   );

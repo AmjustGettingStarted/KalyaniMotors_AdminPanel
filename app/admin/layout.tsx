@@ -2,13 +2,14 @@ import type React from "react";
 import "@/app/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/main/sidebar2";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "[REPLICA] kalyani content moderation",
-  description:
-    "admin panel.",
+  title: "admin",
+  description: "admin panel.",
 };
 
 export default function RootLayout({
@@ -18,7 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans`}>{children}</body>
+      <SidebarProvider>
+        <AppSidebar />
+        <SidebarInset>
+          <body className={`${inter.variable} font-sans`}>{children}</body>
+        </SidebarInset>
+      </SidebarProvider>
     </html>
   );
 }

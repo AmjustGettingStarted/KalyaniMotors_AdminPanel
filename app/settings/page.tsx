@@ -183,7 +183,7 @@ const Settings = () => {
                 {/* Threshold */}
                 <div className="flex flex-col space-y-2">
                   <p className="text-sm sm:text-base">Auto-approve Threshold</p>
-                  <p>
+                  <div>
                     <Select>
                       <SelectTrigger className="w-full cursor-pointer">
                         <SelectValue placeholder="5+ approve posts" />
@@ -195,7 +195,7 @@ const Settings = () => {
                         <SelectItem value="4">20+ approve posts</SelectItem>
                       </SelectContent>
                     </Select>
-                  </p>
+                  </div>
                   <p className="text-xs text-slate-500">
                     Automatically approve posts from trusted users
                   </p>
@@ -227,10 +227,10 @@ const Settings = () => {
               <div className="grid sm:grid-cols-2 gap-6 w-full">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-medium">Require Manual Approval</p>
-                    <p className="text-sm text-slate-500">
+                    <span className="font-medium">Require Manual Approval</span>
+                    <span className="text-sm text-slate-500">
                       All posts need manual review
-                    </p>
+                    </span>
                   </div>
                   <p>
                     <Switch

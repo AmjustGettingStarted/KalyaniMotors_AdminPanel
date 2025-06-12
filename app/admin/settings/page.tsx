@@ -226,12 +226,12 @@ const Settings = () => {
             <CardFooter>
               <div className="grid sm:grid-cols-2 gap-6 w-full">
                 <div className="flex items-center justify-between">
-                  <p>
+                  <div>
                     <p className="font-medium">Require Manual Approval</p>
                     <p className="text-sm text-slate-500">
                       All posts need manual review
                     </p>
-                  </p>
+                  </div>
                   <p>
                     <Switch
                       className="cursor-pointer scale-125"

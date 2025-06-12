@@ -18,13 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <SidebarProvider>
-        <AppSidebar />
-        <SidebarInset>
-          <body className={`${inter.variable} font-sans`}>{children}</body>
-        </SidebarInset>
-      </SidebarProvider>
-    </html>
+    <SidebarProvider>
+      <AppSidebar />
+      <SidebarInset>
+        <body className={`${inter.variable} font-sans`}>{children}</body>
+      </SidebarInset>
+    </SidebarProvider>
   );
 }

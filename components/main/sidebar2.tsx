@@ -16,7 +16,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
       <div className="bg-[rgb(250,250,250)] border-r border-gray-300 h-full">
-        <div className="">
+        <div className="h-full">
           <div className="flex flex-col justify-between ">
             {/* Top Content */}
             <div className="flex flex-col">

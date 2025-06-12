@@ -8,16 +8,16 @@ import { Sidebar } from "../ui/sidebar";
 // This is sample data.
 export const sidebar_routes = [
   { label: "Posts", icon: FileText, href: "/admin" },
-  { label: "Users", icon: Users, href: "/users" },
-  { label: "Settings", icon: Settings, href: "/admin/settings3" },
+  { label: "Users", icon: Users, href: "/admin/users" },
+  { label: "Settings", icon: Settings, href: "/admin/settings" },
 ];
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
-      <div className="bg-[#FAFAFA] border-r border-gray-300">
-        <div className="h-full">
-          <div className="flex flex-col justify-between h-full ">
+      <div className="bg-[rgb(250,250,250)] border-r border-gray-300 h-full">
+        <div className="">
+          <div className="flex flex-col justify-between ">
             {/* Top Content */}
             <div className="flex flex-col">
               {/* Top First */}

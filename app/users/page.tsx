@@ -5,7 +5,7 @@ import { filterData } from "@/data/posts";
 import { users_count, users_select } from "@/data/users";
 import { ArrowDownUpIcon, Filter, Search } from "lucide-react";
 import React from "react";
-import AllUsers from "./_components/all-users";
+import AllUsers from "../admin/users/_components/all-users";
 
 const Users = () => {
   return (

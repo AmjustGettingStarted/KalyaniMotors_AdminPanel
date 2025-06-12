@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { all_users } from "@/data/users";
 import { Ban, Calendar, CircleCheckBig, Mail, User } from "lucide-react";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const AllUsers = () => {
@@ -82,12 +83,14 @@ const AllUsers = () => {
                 </div>
                 {/* Right side buttons */}
                 <div className="flex flex-col sm:flex-row items-center w-full sm:flex-1 gap-2">
+                  <Link href={`/admin/${user.name}`}>
                   <Button
                     variant="outline"
                     className="w-full sm:w-auto cursor-pointer "
-                  >
+                    >
                     View Profile
                   </Button>
+                    </Link>
                   <Button
                     variant="outline"
                     className={`cursor-pointer ${

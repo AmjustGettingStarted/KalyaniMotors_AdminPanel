@@ -14,10 +14,9 @@ export const sidebar_routes = [
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar {...props}>
+    <Sidebar {...props} className="h-full">
       <div className="bg-[rgb(250,250,250)] border-r border-gray-300 h-full">
-        <div className="h-full">
-          <div className="flex flex-col justify-between ">
+          <div className="flex flex-col justify-between h-full">
             {/* Top Content */}
             <div className="flex flex-col">
               {/* Top First */}
@@ -63,7 +62,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </div>
           </div>
         </div>
-      </div>
     </Sidebar>
   );
 }

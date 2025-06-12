@@ -1,4 +1,3 @@
-import AllUsers from "@/app/users/_components/all-users";
 import SelectMenu from "@/components/sub/select-menu";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -6,6 +5,7 @@ import { filterData } from "@/data/posts";
 import { users_count, users_select } from "@/data/users";
 import { ArrowDownUpIcon, Filter, Search } from "lucide-react";
 import React from "react";
+import AllUsers from "./_components/all-users";
 
 const Users = () => {
   return (

@@ -139,14 +139,14 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
             </CardContent>
             <CardFooter className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <Button
-                className="w-full h-10 rounded-sm text-white hover:text-white bg-green-600 hover:bg-green-700"
+                className="w-full h-10 rounded-sm text-white hover:text-white bg-green-600 hover:bg-green-700 cursor-pointer"
                 variant={`outline`}
               >
                 <CircleCheckBig />
                 Approve Post
               </Button>
               <Button
-                className="w-full h-10 rounded-sm text-white hover:text-white bg-red-600 hover:bg-red-700"
+                className="w-full h-10 rounded-sm text-white hover:text-white bg-red-600 hover:bg-red-700 cursor-pointer"
                 variant={`outline`}
               >
                 <CircleX />
@@ -156,6 +156,11 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
           </Card>
         </div>
         <Separator />
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+          <div className="flex h-12 w-8 justify-center rounded-full border-2 border-white/50">
+            <div className="mt-2 h-3 w-1 animate-bounce rounded-full bg-white" />
+          </div>
+        </div>
         <div>
           <h1>Coments</h1>
         </div>

@@ -1,9 +1,9 @@
-type comment = "Total" | "Pending" | "Approved" | "Rejected";
-export const commentCount: comment[] = [
-  "Total",
-  "Pending",
-  "Approved",
-  "Rejected",
+type comment = "Newest" | "Oldest" | "User Name" | "Status";
+export const commentFilter: comment[] = [
+  "Newest",
+  "Oldest",
+  "User Name",
+  "Status",
 ];
 
 export const comment_count = [

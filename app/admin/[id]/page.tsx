@@ -15,6 +15,7 @@ import {
   CircleX,
   Clock,
   ExternalLinkIcon,
+  MessageSquare,
   Phone,
   Shield,
   Sidebar,
@@ -49,8 +50,9 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
       </div>
 
       <div className="space-y-6">
+        {/* Back to home button */}
         <div className="pt-6">
-          <Link href="/posts">
+          <Link href="/admin">
             <Button
               className="rounded-sm cursor-pointer shadow-none"
               variant="outline"
@@ -60,6 +62,8 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
             </Button>
           </Link>
         </div>
+
+        {/* Post Details */}
         <div>
           <Card className="rounded-sm">
             <CardHeader>
@@ -155,14 +159,20 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
             </CardFooter>
           </Card>
         </div>
+
         <Separator />
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-          <div className="flex h-12 w-8 justify-center rounded-full border-2 border-white/50">
-            <div className="mt-2 h-3 w-1 animate-bounce rounded-full bg-white" />
-          </div>
-        </div>
+
+        {/* Comments Section */}
+
         <div>
-          <h1>Coments</h1>
+          <div className="flex flex-col">
+            <div className="flex gap-2 items-center font-semibold">
+              <span>
+                <MessageSquare />
+              </span>
+              <h1 className="text-2xl">Comments ( 18 ) </h1>
+            </div>
+          </div>
         </div>
       </div>
     </div>

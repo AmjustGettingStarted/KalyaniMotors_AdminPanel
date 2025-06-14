@@ -12,6 +12,14 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 import { Separator } from "@/components/ui/separator";
 import { comment_count, commentFilter } from "@/data/post-details";
 import { status } from "@/data/posts";
@@ -307,6 +315,30 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
                   </div>
                 </Card>
               ))}
+            </div>
+
+            {/* Pagination */}
+            <div>
+              <Pagination>
+                <PaginationContent>
+                  <PaginationItem>
+                    <PaginationPrevious href="#" />
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationLink href="#">1</PaginationLink>
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationLink href="#">2</PaginationLink>
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationLink href="#">3</PaginationLink>
+                  </PaginationItem>
+
+                  <PaginationItem>
+                    <PaginationNext href="#" />
+                  </PaginationItem>
+                </PaginationContent>
+              </Pagination>
             </div>
           </div>
         </div>

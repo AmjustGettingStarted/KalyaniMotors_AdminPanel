@@ -304,13 +304,13 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
                           </p>
                         </div>
                       </div>
-                      <p>
-                        Sample comment{user.id}. This is a test comment for
+                      <p className="text-slate-700">
+                        Sample comment {user.id}. This is a test comment for
                         demonstration purposes.
                       </p>
-                      <div className="flex items-center space-x-2">
+                      <div className="flex items-center space-x-1 text-xs text-slate-500">
                         <p>
-                          <Phone />
+                          <Phone size={10} />
                         </p>
                         <p>748928989{user.id}</p>
                         <p>

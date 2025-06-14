@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { users_count } from "@/data/users";
 import {
   ArrowLeft,
   CircleCheckBig,
@@ -166,11 +167,47 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
 
         <div>
           <div className="flex flex-col">
+            {/* Title  */}
             <div className="flex gap-2 items-center font-semibold">
               <span>
                 <MessageSquare />
               </span>
               <h1 className="text-2xl">Comments ( 18 ) </h1>
+            </div>
+
+            {/* Users Count Card Section */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-4 pb-2">
+              {users_count.map((item, i) => (
+                <Card key={i} className="rounded-sm shadow-xs">
+                  <CardContent className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <p className="text-sm">{item.lable}</p>
+                      <p
+                        className={`${
+                          item.lable === "Active Users"
+                            ? "text-green-500"
+                            : item.lable === "Blocked"
+                            ? "text-red-500"
+                            : "text-slate-500"
+                        }`}
+                      >
+                        <item.icon size={17} />
+                      </p>
+                    </div>
+                    <p
+                      className={`text-2xl font-bold ${
+                        item.lable === "Active Users"
+                          ? "text-green-600"
+                          : item.lable === "Blocked"
+                          ? "text-red-600"
+                          : ""
+                      }`}
+                    >
+                      {item.count}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import SelectMenu from "@/components/sub/select-menu";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -8,16 +9,23 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { comment_count } from "@/data/post-details";
+import { comment_count, commentFilter } from "@/data/post-details";
+import { status } from "@/data/posts";
 import {
+  ArrowDownUpIcon,
   ArrowLeft,
   CircleCheckBig,
   CircleX,
   Clock,
   ExternalLinkIcon,
+  Filter,
   MessageSquare,
   Phone,
+  Search,
   Shield,
   Sidebar,
 } from "lucide-react";
@@ -176,7 +184,7 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
             </div>
 
             {/* Users Count Card Section */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-4 pb-2">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 py-4">
               {comment_count.map((item, i) => (
                 <Card key={i} className="rounded-sm shadow-xs py-3">
                   <CardContent className="px-4">
@@ -184,11 +192,11 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
                       <p
                         className={`text-lg font-bold ${
                           item.lable === "Approved"
-                            ? "text-green-500"
+                            ? "text-green-600"
                             : item.lable === "Rejected"
-                            ? "text-red-500"
+                            ? "text-red-600"
                             : item.lable === "Pending"
-                            ? "text-amber-500"
+                            ? "text-amber-600"
                             : "text-black"
                         }`}
                       >
@@ -199,6 +207,39 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+
+            {/* Filter component */}
+            <div className="md:px-4 py-2 md:border md:border-gray-300 rounded-md">
+              <div className="flex flex-col space-y-2">
+                <div className="flex-col md:flex-row md:flex w-full">
+                  <div className="w-full md:w-1/2 flex items-center space-x-2 ">
+                    <Search size={18} className="text-slate-400" />
+                    <Input
+                      placeholder="Search by username, content, or post ID ..."
+                      className="my-2 h-10 placeholder:text-sm truncate "
+                    />
+                  </div>
+                  <div className="flex w-full md:w-1/2 md:pl-4 space-x-2">
+                    <p className="flex items-center w-1/2 gap-2">
+                      <Filter size={18} className="text-slate-400" />
+                      <SelectMenu data={status} />
+                    </p>
+                    <p className="flex items-center w-1/2 gap-2">
+                      <ArrowDownUpIcon className="text-slate-400" />
+                      <SelectMenu data={commentFilter} />
+                    </p>
+                  </div>
+                </div>
+                <div className="hidden md:block mb-2">
+                  <p className="flex items-center space-x-2">
+                    <Checkbox className="mr-2 border-black cursor-pointer" />
+                    <Label className="text-sm font-normal text-slate-600">
+                      Select all
+                    </Label>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

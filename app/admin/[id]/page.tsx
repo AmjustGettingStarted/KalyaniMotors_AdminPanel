@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { users_count } from "@/data/users";
+import { comment_count } from "@/data/post-details";
 import {
   ArrowLeft,
   CircleCheckBig,
@@ -177,34 +177,25 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
 
             {/* Users Count Card Section */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-4 pb-2">
-              {users_count.map((item, i) => (
-                <Card key={i} className="rounded-sm shadow-xs">
-                  <CardContent className="space-y-2">
+              {comment_count.map((item, i) => (
+                <Card key={i} className="rounded-sm shadow-xs py-3">
+                  <CardContent className="px-4">
                     <div className="flex justify-between items-center">
-                      <p className="text-sm">{item.lable}</p>
                       <p
-                        className={`${
-                          item.lable === "Active Users"
+                        className={`text-lg font-bold ${
+                          item.lable === "Approved"
                             ? "text-green-500"
-                            : item.lable === "Blocked"
+                            : item.lable === "Rejected"
                             ? "text-red-500"
-                            : "text-slate-500"
+                            : item.lable === "Pending"
+                            ? "text-amber-500"
+                            : "text-black"
                         }`}
                       >
-                        <item.icon size={17} />
+                        {item.count}
                       </p>
                     </div>
-                    <p
-                      className={`text-2xl font-bold ${
-                        item.lable === "Active Users"
-                          ? "text-green-600"
-                          : item.lable === "Blocked"
-                          ? "text-red-600"
-                          : ""
-                      }`}
-                    >
-                      {item.count}
-                    </p>
+                    <p className="text-sm">{item.lable}</p>
                   </CardContent>
                 </Card>
               ))}

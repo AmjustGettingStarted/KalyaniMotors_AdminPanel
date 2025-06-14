@@ -19,6 +19,7 @@ import { all_users } from "@/data/users";
 import {
   ArrowDownUpIcon,
   ArrowLeft,
+  CheckCircle,
   CircleCheckBig,
   CircleX,
   Clock,
@@ -287,6 +288,21 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
                         </p>
                         <p>Member</p>
                       </div>
+                      <CardFooter className="flex items-center gap-2">
+                        <Button
+                          variant="outline"
+                          className="flex h-10  items-center  bg-green-600 hover:bg-green-700  text-white hover:text-white rounded-sm  cursor-pointer text-sm"
+                        >
+                          <CheckCircle /> Approve
+                        </Button>
+                        <Button
+                          variant="destructive"
+                          className="flex h-10 items-center  rounded-sm  cursor-pointer text-sm text-white hover:text-white hover:bg-red-700"
+                        >
+                          <CircleX />
+                          Reject
+                        </Button>
+                      </CardFooter>
                     </div>
                   </div>
                 </Card>

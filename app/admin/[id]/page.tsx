@@ -1,5 +1,5 @@
 import SelectMenu from "@/components/sub/select-menu";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -29,6 +29,7 @@ import {
   Search,
   Shield,
   Sidebar,
+  User,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -246,7 +247,33 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
             {/* All Users Cards */}
             <div className="py-4 space-y-4">
               {all_users.map((user, i) => (
-                <Card key={i} className="rounded-sm shadow-xs"></Card>
+                <Card key={i} className="rounded-sm shadow-xs flex py-4">
+                  {/* Left Card */}
+                  <div className="flex items-start w-full">
+                    <div className="flex items-start gap-4 px-4">
+                      <Checkbox />
+                      <Avatar className="size-11">
+                        <AvatarImage src={user.avatar} />
+                        <AvatarFallback>
+                          <User />
+                        </AvatarFallback>
+                      </Avatar>
+                    </div>
+                    {/* Middle Card */}
+                    <div className="flex flex-col space-y-2 w-full">
+                      <div className="flex justify-between items-center">
+                        <div className="flex space-x-4">
+                          <p>{user.name}</p>
+                          <p>{user.status}</p>
+                          <p>ID: {user.name}</p>
+                        </div>
+                        <div>
+                          <p>about {user.last_active} ago</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
               ))}
             </div>
           </div>

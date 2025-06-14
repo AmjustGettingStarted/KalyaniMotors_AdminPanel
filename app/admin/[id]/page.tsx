@@ -21,9 +21,8 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import { Separator } from "@/components/ui/separator";
-import { comment_count, commentFilter } from "@/data/post-details";
+import { all_users, comment_count, commentFilter } from "@/data/post-details";
 import { status } from "@/data/posts";
-import { all_users } from "@/data/users";
 import {
   ArrowDownUpIcon,
   ArrowLeft,
@@ -261,7 +260,7 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
                   <div className="flex items-start w-full">
                     {/* Left Card */}
                     <div className="flex items-start gap-4 px-4">
-                      <Checkbox />
+                      <Checkbox className=" border cursor-pointer border-black" />
                       <Avatar className="size-11">
                         <AvatarImage src={user.avatar} />
                         <AvatarFallback>
@@ -275,8 +274,27 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
                       <div className="flex justify-between items-center">
                         <div className="flex space-x-4">
                           <p>{user.name}</p>
-                          <p>{user.status}</p>
-                          <p>ID: {user.id}</p>
+                          <p
+                            className={`flex items-center rounded-full  px-2 text-xs capitalize font-medium ${
+                              user.status === "Approved"
+                                ? "bg-green-100 text-green-800"
+                                : user.status === "Rejected"
+                                ? "bg-red-100 text-red-800"
+                                : "bg-amber-100 text-amber-800"
+                            }`}
+                          >
+                            {user.status === "Pending" ? (
+                              <Clock size={15} className="mr-2" />
+                            ) : user.status === "Approved" ? (
+                              <CheckCircle size={15} className="mr-2" />
+                            ) : (
+                              <CircleX size={15} className="mr-2" />
+                            )}
+                            {user.status}
+                          </p>
+                          <p className="text-xs text-slate-400">
+                            ID: {user.id}
+                          </p>
                         </div>
                         <div>
                           <p>about {user.last_active} ago</p>

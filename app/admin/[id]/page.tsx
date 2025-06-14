@@ -15,6 +15,7 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { comment_count, commentFilter } from "@/data/post-details";
 import { status } from "@/data/posts";
+import { all_users } from "@/data/users";
 import {
   ArrowDownUpIcon,
   ArrowLeft,
@@ -240,6 +241,13 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
                   </p>
                 </div>
               </div>
+            </div>
+
+            {/* All Users Cards */}
+            <div className="py-4 space-y-4">
+              {all_users.map((user, i) => (
+                <Card key={i} className="rounded-sm shadow-xs"></Card>
+              ))}
             </div>
           </div>
         </div>

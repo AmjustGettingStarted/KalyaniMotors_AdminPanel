@@ -22,6 +22,7 @@ import {
   CircleCheckBig,
   CircleX,
   Clock,
+  Dot,
   ExternalLinkIcon,
   Filter,
   MessageSquare,
@@ -248,8 +249,8 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
             <div className="py-4 space-y-4">
               {all_users.map((user, i) => (
                 <Card key={i} className="rounded-sm shadow-xs flex py-4">
-                  {/* Left Card */}
                   <div className="flex items-start w-full">
+                    {/* Left Card */}
                     <div className="flex items-start gap-4 px-4">
                       <Checkbox />
                       <Avatar className="size-11">
@@ -261,15 +262,30 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
                     </div>
                     {/* Middle Card */}
                     <div className="flex flex-col space-y-2 w-full">
+                      {/* Top Line  */}
                       <div className="flex justify-between items-center">
                         <div className="flex space-x-4">
                           <p>{user.name}</p>
                           <p>{user.status}</p>
-                          <p>ID: {user.name}</p>
+                          <p>ID: {user.id}</p>
                         </div>
                         <div>
                           <p>about {user.last_active} ago</p>
                         </div>
+                      </div>
+                      <p>
+                        Sample comment{user.id}. This is a test comment for
+                        demonstration purposes.
+                      </p>
+                      <div className="flex items-center space-x-2">
+                        <p>
+                          <Phone />
+                        </p>
+                        <p>748928989{user.id}</p>
+                        <p>
+                          <Dot />
+                        </p>
+                        <p>Member</p>
                       </div>
                     </div>
                   </div>

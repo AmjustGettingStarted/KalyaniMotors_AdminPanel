@@ -273,7 +273,9 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
                       {/* Top Line  */}
                       <div className="flex justify-between items-center">
                         <div className="flex space-x-4">
-                          <p>{user.name}</p>
+                          <p className="uppercase text-sm sm:text-base">
+                            {user.name}
+                          </p>
                           <p
                             className={`flex items-center rounded-full  px-2 text-xs capitalize font-medium ${
                               user.status === "Approved"
@@ -297,7 +299,9 @@ const PostDetail = ({ params }: { params: { id: string } }) => {
                           </p>
                         </div>
                         <div>
-                          <p>about {user.last_active} ago</p>
+                          <p className="text-slate-500 text-xs pr-4">
+                            about {user.last_active} ago
+                          </p>
                         </div>
                       </div>
                       <p>
